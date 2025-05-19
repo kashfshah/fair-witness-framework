@@ -198,5 +198,72 @@ const siteName = "Fair Witness Bot";
       </div>
     </footer>
     <MobileMenuScript />
+    
+    <!-- Jump to Top Button -->
+    <button 
+      id="jump-to-top" 
+      aria-label="Scroll to top of page"
+      class="fixed bottom-6 right-6 bg-accent1/90 hover:bg-accent1 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transform translate-y-20 opacity-0 transition-all duration-300 z-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent1"
+      tabindex="0"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+      </svg>
+    </button>
+    
+    <script>
+      // Jump to top functionality with progressive enhancement
+      document.addEventListener('DOMContentLoaded', function() {
+        const jumpToTopBtn = document.getElementById('jump-to-top');
+        
+        // Only initialize if button exists (defensive coding)
+        if (!jumpToTopBtn) return;
+        
+        // Function to check scroll position and show/hide button
+        function handleScroll() {
+          // Show button when scrolled down 300px
+          if (window.scrollY > 300) {
+            jumpToTopBtn.classList.remove('translate-y-20', 'opacity-0');
+            jumpToTopBtn.classList.add('translate-y-0', 'opacity-100');
+          } else {
+            jumpToTopBtn.classList.add('translate-y-20', 'opacity-0');
+            jumpToTopBtn.classList.remove('translate-y-0', 'opacity-100');
+          }
+        }
+        
+        // Throttle scroll events for performance
+        let isScrolling = false;
+        window.addEventListener('scroll', function() {
+          if (!isScrolling) {
+            window.requestAnimationFrame(function() {
+              handleScroll();
+              isScrolling = false;
+            });
+            isScrolling = true;
+          }
+        });
+        
+        // Scroll to top with smooth behavior when button clicked
+        jumpToTopBtn.addEventListener('click', function() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+        
+        // Support keyboard navigation - allow Enter key to trigger button
+        jumpToTopBtn.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+          }
+        });
+        
+        // Initial check on page load
+        handleScroll();
+      });
+    </script>
   </body>
 </html>
