@@ -18,6 +18,12 @@ export default {
         DEFAULT: {
           css: {
             color: theme('colors.primary'),
+            maxWidth: '100%',
+            p: {
+              color: theme('colors.primary'),
+              marginTop: '1.25em',
+              marginBottom: '1.25em',
+            },
             h1: {
               color: theme('colors.primary'),
               fontFamily: theme('fontFamily.display')
@@ -32,8 +38,14 @@ export default {
               fontFamily: theme('fontFamily.display'),
               fontWeight: '600'
             },
+            li: {
+              color: theme('colors.primary'),
+              marginTop: '0.5em',
+              marginBottom: '0.5em',
+            },
             strong: {
-              color: theme('colors.accent1')
+              color: theme('colors.accent1'),
+              fontWeight: '600',
             },
             'ol > li::before': {
               color: theme('colors.accent2')
@@ -54,6 +66,9 @@ export default {
         dark: {
           css: {
             color: theme('colors.secondary'),
+            p: {
+              color: theme('colors.secondary'),
+            },
             h1: {
               color: theme('colors.secondary'),
             },
@@ -63,8 +78,12 @@ export default {
             h3: {
               color: theme('colors.secondary'),
             },
+            li: {
+              color: theme('colors.secondary'),
+            },
             strong: {
-              color: theme('colors.accent1')
+              color: theme('colors.accent1'),
+              fontWeight: '600',
             },
             'ol > li::before': {
               color: theme('colors.accent1')
