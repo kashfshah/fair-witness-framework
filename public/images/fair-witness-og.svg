@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fair Witness Bot Open Graph Image Template -->
+  <!-- Represents main social sharing image with framework highlights -->
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#1a3c5b"/>
+  
+  <!-- Accent Elements -->
+  <path d="M0 0L1200 0L1200 60L0 60L0 0Z" fill="#ff9d00" fill-opacity="0.2"/>
+  <path d="M0 570L1200 570L1200 630L0 630L0 570Z" fill="#ff9d00" fill-opacity="0.2"/>
+  
+  <!-- Circular Elements -->
+  <circle cx="180" cy="315" r="120" fill="#27a594" fill-opacity="0.15"/>
+  <circle cx="1020" cy="315" r="120" fill="#ff9d00" fill-opacity="0.15"/>
+  <circle cx="600" cy="315" r="200" fill="#805ad5" fill-opacity="0.1"/>
+  
+  <!-- Logo and Branding -->
+  <text x="80" y="100" font-family="Space Grotesk" font-size="42" font-weight="700" fill="#ffffff">Fair Witness Bot</text>
+  <rect x="80" y="120" width="240" height="4" fill="#ff9d00"/>
+  
+  <!-- Main Title -->
+  <text x="80" y="240" font-family="Space Grotesk" font-size="64" font-weight="700" fill="#ffffff">Function-Epistemic</text>
+  <text x="80" y="320" font-family="Space Grotesk" font-size="64" font-weight="700" fill="#ffffff">Hybrid Framework</text>
+  
+  <!-- Subtitle -->
+  <text x="80" y="400" font-family="Inter" font-size="32" font-weight="400" fill="#e0e5ec">Structure Your AI Interactions</text>
+  <text x="80" y="450" font-family="Inter" font-size="32" font-weight="400" fill="#e0e5ec">with Objective Analysis</text>
+  
+  <!-- Function Icons (Simplified) -->
+  <circle cx="150" cy="520" r="30" fill="#ffffff" stroke="#27a594" stroke-width="2"/>
+  <text x="150" y="526" font-family="Space Grotesk" font-size="14" font-weight="700" text-anchor="middle" fill="#27a594">Observer</text>
+  
+  <circle cx="250" cy="520" r="30" fill="#ffffff" stroke="#3182ce" stroke-width="2"/>
+  <text x="250" y="526" font-family="Space Grotesk" font-size="14" font-weight="700" text-anchor="middle" fill="#3182ce">Evaluator</text>
+  
+  <circle cx="350" cy="520" r="30" fill="#ffffff" stroke="#ff9d00" stroke-width="2"/>
+  <text x="350" y="526" font-family="Space Grotesk" font-size="14" font-weight="700" text-anchor="middle" fill="#ff9d00">Analyst</text>
+  
+  <circle cx="450" cy="520" r="30" fill="#ffffff" stroke="#805ad5" stroke-width="2"/>
+  <text x="450" y="526" font-family="Space Grotesk" font-size="14" font-weight="700" text-anchor="middle" fill="#805ad5">Synthesist</text>
+  
+  <circle cx="550" cy="520" r="30" fill="#ffffff" stroke="#38a169" stroke-width="2"/>
+  <text x="550" y="526" font-family="Space Grotesk" font-size="14" font-weight="700" text-anchor="middle" fill="#38a169">Communicator</text>
+
+  <!-- Geometric Elements -->
+  <path d="M1000 180L1120 180L1120 300L1000 300L1000 180Z" stroke="#ff9d00" stroke-width="4" stroke-linejoin="round" fill="none"/>
+  <path d="M1000 330L1120 330L1120 450L1000 450L1000 330Z" stroke="#27a594" stroke-width="4" stroke-linejoin="round" fill="none"/>
+  <circle cx="1060" cy="390" r="30" stroke="#27a594" stroke-width="4" fill="none"/>
+  <circle cx="1060" cy="240" r="30" stroke="#ff9d00" stroke-width="4" fill="none"/>
+  
+  <!-- URL -->
+  <text x="600" y="580" font-family="Space Grotesk" font-size="24" font-weight="500" text-anchor="middle" fill="#ffffff">fairwitness.bot</text>
+</svg>

@@ -1,0 +1,67 @@
+---
+/**
+ * @license
+ * Fair Witness Bot Framework
+ * Copyright (c) 2025 Fair Witness Bot
+ * This source code contains material licensed under the Creative Commons
+ * Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+ * https://creativecommons.org/licenses/by-sa/4.0/
+ */
+
+
+/**
+ * MobileMenuScript Component
+ * 
+ * Provides interactive functionality for mobile menu toggle
+ * Follows a clean, functional approach without relying on complex dependencies
+ */
+---
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuBars = document.querySelectorAll('.mobile-menu-bar');
+    
+    if (mobileMenuToggle && mobileMenu) {
+      let menuOpen = false;
+      
+      const toggleMenu = () => {
+        menuOpen = !menuOpen;
+        
+        // Toggle menu visibility
+        mobileMenu.classList.toggle('hidden', !menuOpen);
+        
+        // Animate hamburger to X
+        if (menuOpen) {
+          menuBars[0].style.transform = 'translateY(8px) rotate(45deg)';
+          menuBars[1].style.opacity = '0';
+          menuBars[2].style.transform = 'translateY(-8px) rotate(-45deg)';
+        } else {
+          menuBars[0].style.transform = 'none';
+          menuBars[1].style.opacity = '1';
+          menuBars[2].style.transform = 'none';
+        }
+      };
+      
+      mobileMenuToggle.addEventListener('click', toggleMenu);
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', (event) => {
+        const target = event.target;
+        if (menuOpen && 
+            !mobileMenu.contains(target) && 
+            !mobileMenuToggle.contains(target)) {
+          toggleMenu();
+        }
+      });
+      
+      // Close menu when window resizes to desktop size
+      window.addEventListener('resize', () => {
+        if (menuOpen && window.innerWidth >= 768) {
+          toggleMenu();
+        }
+      });
+    }
+  });
+</script>

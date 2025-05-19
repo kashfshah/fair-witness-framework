@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Evaluator Function Icon -->
+  <!-- Represents assessment against criteria -->
+  <path d="M3 12H21" stroke="#3182ce" stroke-width="2" stroke-linecap="round"/>
+  <path d="M12 4V20" stroke="#3182ce" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="12" cy="12" r="2" fill="#3182ce"/>
+  <circle cx="7" cy="12" r="1.5" fill="#3182ce" fill-opacity="0.7"/>
+  <circle cx="17" cy="12" r="1.5" fill="#3182ce" fill-opacity="0.7"/>
+  <circle cx="12" cy="7" r="1.5" fill="#3182ce" fill-opacity="0.7"/>
+  <circle cx="12" cy="17" r="1.5" fill="#3182ce" fill-opacity="0.7"/>
+</svg>

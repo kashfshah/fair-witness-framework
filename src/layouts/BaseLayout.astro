@@ -1,15 +1,40 @@
 ---
+/**
+ * @license
+ * Fair Witness Bot Framework
+ * Copyright (c) 2025 Fair Witness Bot
+ * This source code contains material licensed under the Creative Commons
+ * Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+ * https://creativecommons.org/licenses/by-sa/4.0/
+ */
+
 import '../styles/global.css';
+import MobileMenuScript from '../components/global/MobileMenuScript.astro';
 
 interface Props {
   title: string;
   description?: string;
+  image?: string;
+  canonicalUrl?: string;
+  type?: 'website' | 'article';
+  publishedDate?: string;
+  modifiedDate?: string;
 }
 
 const { 
   title, 
-  description = "The Fair Witness Framework for structured, objective LLM interactions"
+  description = "The Fair Witness Framework for structured, objective LLM interactions",
+  image = "/images/fair-witness-og.jpg",
+  canonicalUrl = Astro.url.pathname,
+  type = "website",
+  publishedDate,
+  modifiedDate
 } = Astro.props;
+
+const siteUrl = "https://fairwitness.bot";
+const fullUrl = `${siteUrl}${canonicalUrl}`;
+const imageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
+const siteName = "Fair Witness Bot";
 ---
 
 <!DOCTYPE html>
@@ -17,9 +42,66 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="description" content={description} />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Primary Meta Tags -->
     <title>{title} | Fair Witness Bot</title>
+    <meta name="title" content={`${title} | Fair Witness Bot`} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="fair witness, function-epistemic framework, LLM interactions, objective AI, structured prompting, E-Prime language, AI framework" />
+    <link rel="canonical" href={fullUrl} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={fullUrl} />
+    <meta property="og:title" content={`${title} | Fair Witness Bot`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:site_name" content={siteName} />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={fullUrl} />
+    <meta property="twitter:title" content={`${title} | Fair Witness Bot`} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={imageUrl} />
+    
+    <!-- Article Specific Metadata -->
+    {publishedDate && <meta property="article:published_time" content={publishedDate} />}
+    {modifiedDate && <meta property="article:modified_time" content={modifiedDate} />}
+    
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": type === 'article' ? "Article" : "WebSite",
+      "headline": title,
+      "description": description,
+      "image": imageUrl,
+      "url": fullUrl,
+      "name": siteName,
+      ...publishedDate ? {"datePublished": publishedDate} : {},
+      ...modifiedDate ? {"dateModified": modifiedDate} : {},
+      "author": {
+        "@type": "Organization",
+        "name": "Fair Witness Bot"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fair Witness Bot",
+        "logo": {
+          "@type": "ImageObject",
+          "url": `${siteUrl}/images/logo.png`
+        }
+      }
+    })} />
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
@@ -30,14 +112,39 @@ const {
         <div class="flex items-center gap-2">
           <a href="/" class="font-display text-2xl font-bold">Fair Witness Bot</a>
         </div>
-        <nav>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:block">
           <ul class="flex gap-6">
             <li><a href="/framework" class="hover:text-accent1">Framework</a></li>
             <li><a href="/implementation" class="hover:text-accent1">Implementation</a></li>
             <li><a href="/examples" class="hover:text-accent1">Examples</a></li>
+            <li><a href="/quick-start" class="hover:text-accent1">Quick Start</a></li>
             <li><a href="/about" class="hover:text-accent1">About</a></li>
           </ul>
         </nav>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-toggle" class="md:hidden flex flex-col justify-center items-center w-8 h-8">
+          <span class="block w-6 h-0.5 bg-primary dark:bg-secondary mb-1.5 transition-transform mobile-menu-bar"></span>
+          <span class="block w-6 h-0.5 bg-primary dark:bg-secondary mb-1.5 transition-opacity mobile-menu-bar"></span>
+          <span class="block w-6 h-0.5 bg-primary dark:bg-secondary transition-transform mobile-menu-bar"></span>
+        </button>
+      </div>
+      
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="md:hidden hidden py-4 border-t border-primary/10 dark:border-secondary/10">
+        <div class="container">
+          <nav>
+            <ul class="flex flex-col gap-4">
+              <li><a href="/framework" class="block py-2 hover:text-accent1">Framework</a></li>
+              <li><a href="/implementation" class="block py-2 hover:text-accent1">Implementation</a></li>
+              <li><a href="/examples" class="block py-2 hover:text-accent1">Examples</a></li>
+              <li><a href="/quick-start" class="block py-2 hover:text-accent1">Quick Start</a></li>
+              <li><a href="/about" class="block py-2 hover:text-accent1">About</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
     <main>
@@ -76,5 +183,6 @@ const {
         </div>
       </div>
     </footer>
+    <MobileMenuScript />
   </body>
 </html>

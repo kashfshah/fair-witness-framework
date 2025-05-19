@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Function-Epistemic Hybrid Framework Diagram -->
+  <!-- Represents the complete framework with all functions and relationships -->
+  
+  <!-- Background and Zones -->
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <!-- Input Zone -->
+  <rect x="80" y="100" width="200" height="475" fill="#e0e5ec" fill-opacity="0.3" rx="8"/>
+  <!-- Processing Zone -->
+  <rect x="320" y="100" width="560" height="475" fill="#e0e5ec" fill-opacity="0.5" rx="8"/>
+  <!-- Output Zone -->
+  <rect x="920" y="100" width="200" height="475" fill="#e0e5ec" fill-opacity="0.3" rx="8"/>
+  
+  <!-- Zone Labels -->
+  <text x="180" y="80" font-family="Space Grotesk" font-size="24" font-weight="700" text-anchor="middle" fill="#1a3c5b">Input</text>
+  <text x="600" y="80" font-family="Space Grotesk" font-size="24" font-weight="700" text-anchor="middle" fill="#1a3c5b">Processing</text>
+  <text x="1020" y="80" font-family="Space Grotesk" font-size="24" font-weight="700" text-anchor="middle" fill="#1a3c5b">Output</text>
+  
+  <!-- Framework Title -->
+  <text x="600" y="40" font-family="Space Grotesk" font-size="32" font-weight="700" text-anchor="middle" fill="#1a3c5b">Function-Epistemic Hybrid Framework</text>
+  
+  <!-- Input Representation -->
+  <rect x="130" y="200" width="100" height="100" rx="8" fill="#ffffff" stroke="#1a3c5b" stroke-width="2"/>
+  <text x="180" y="230" font-family="Space Grotesk" font-size="18" font-weight="500" text-anchor="middle" fill="#1a3c5b">Raw</text>
+  <text x="180" y="260" font-family="Space Grotesk" font-size="18" font-weight="500" text-anchor="middle" fill="#1a3c5b">Information</text>
+  <text x="180" y="290" font-family="Space Grotesk" font-size="18" font-weight="500" text-anchor="middle" fill="#1a3c5b">Input</text>
+  
+  <!-- Function Nodes -->
+  <!-- Observer Function -->
+  <circle cx="400" cy="250" r="70" fill="#ffffff" stroke="#27a594" stroke-width="3"/>
+  <circle cx="400" cy="250" r="20" fill="#27a594" fill-opacity="0.2"/>
+  <circle cx="400" cy="250" r="5" fill="#27a594"/>
+  <path d="M400 210V220" stroke="#27a594" stroke-width="2" stroke-linecap="round"/>
+  <path d="M400 280V290" stroke="#27a594" stroke-width="2" stroke-linecap="round"/>
+  <path d="M360 250H370" stroke="#27a594" stroke-width="2" stroke-linecap="round"/>
+  <path d="M430 250H440" stroke="#27a594" stroke-width="2" stroke-linecap="round"/>
+  <text x="400" y="330" font-family="Space Grotesk" font-size="20" font-weight="700" text-anchor="middle" fill="#27a594">Observer</text>
+  <text x="400" y="355" font-family="Inter" font-size="14" font-weight="400" text-anchor="middle" fill="#27a594">Objective data collection</text>
+  
+  <!-- Evaluator Function -->
+  <circle cx="600" cy="180" r="70" fill="#ffffff" stroke="#3182ce" stroke-width="3"/>
+  <path d="M550 180H650" stroke="#3182ce" stroke-width="2" stroke-linecap="round"/>
+  <path d="M600 130V230" stroke="#3182ce" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="600" cy="180" r="5" fill="#3182ce"/>
+  <text x="600" y="260" font-family="Space Grotesk" font-size="20" font-weight="700" text-anchor="middle" fill="#3182ce">Evaluator</text>
+  <text x="600" y="285" font-family="Inter" font-size="14" font-weight="400" text-anchor="middle" fill="#3182ce">Assessment against criteria</text>
+  
+  <!-- Analyst Function -->
+  <circle cx="600" cy="420" r="70" fill="#ffffff" stroke="#ff9d00" stroke-width="3"/>
+  <path d="M600 370L630 420L600 470L570 420L600 370Z" stroke="#ff9d00" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="600" cy="420" r="5" fill="#ff9d00"/>
+  <text x="600" y="500" font-family="Space Grotesk" font-size="20" font-weight="700" text-anchor="middle" fill="#ff9d00">Analyst</text>
+  <text x="600" y="525" font-family="Inter" font-size="14" font-weight="400" text-anchor="middle" fill="#ff9d00">Pattern identification</text>
+  
+  <!-- Synthesist Function -->
+  <circle cx="800" cy="300" r="70" fill="#ffffff" stroke="#805ad5" stroke-width="3"/>
+  <path d="M800 250L850 300L800 350L750 300L800 250Z" stroke="#805ad5" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M780 280L820 320" stroke="#805ad5" stroke-width="2" stroke-linecap="round"/>
+  <path d="M820 280L780 320" stroke="#805ad5" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="800" cy="300" r="5" fill="#805ad5"/>
+  <text x="800" y="380" font-family="Space Grotesk" font-size="20" font-weight="700" text-anchor="middle" fill="#805ad5">Synthesist</text>
+  <text x="800" y="405" font-family="Inter" font-size="14" font-weight="400" text-anchor="middle" fill="#805ad5">Integration of perspectives</text>
+  
+  <!-- Communicator Function -->
+  <circle cx="970" cy="300" r="70" fill="#ffffff" stroke="#38a169" stroke-width="3"/>
+  <path d="M920 270H1020C1025 270 1030 275 1030 280V330C1030 335 1025 340 1020 340H970L940 360V340H920C915 340 910 335 910 330V280C910 275 915 270 920 270Z" stroke="#38a169" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M930 300H970" stroke="#38a169" stroke-width="2" stroke-linecap="round"/>
+  <path d="M930 320H950" stroke="#38a169" stroke-width="2" stroke-linecap="round"/>
+  <text x="970" y="380" font-family="Space Grotesk" font-size="20" font-weight="700" text-anchor="middle" fill="#38a169">Communicator</text>
+  <text x="970" y="405" font-family="Inter" font-size="14" font-weight="400" text-anchor="middle" fill="#38a169">Clear transmission</text>
+  
+  <!-- Connection Arrows -->
+  <!-- Input to Observer -->
+  <path d="M230 250H320" stroke="#1a3c5b" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow)"/>
+  
+  <!-- Observer to Evaluator -->
+  <path d="M460 220C480 200 500 180 520 180" stroke="#1a3c5b" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow)"/>
+  
+  <!-- Observer to Analyst -->
+  <path d="M460 280C480 320 500 380 520 400" stroke="#1a3c5b" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow)"/>
+  
+  <!-- Evaluator to Synthesist -->
+  <path d="M670 180C700 200 720 250 730 270" stroke="#1a3c5b" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow)"/>
+  
+  <!-- Analyst to Synthesist -->
+  <path d="M670 420C700 400 720 350 730 330" stroke="#1a3c5b" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow)"/>
+  
+  <!-- Synthesist to Communicator -->
+  <path d="M870 300H890" stroke="#1a3c5b" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow)"/>
+  
+  <!-- Communicator to Output -->
+  <path d="M1040 300H1080" stroke="#1a3c5b" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow)"/>
+  
+  <!-- Output Representation -->
+  <rect x="1080" y="250" width="100" height="100" rx="8" fill="#ffffff" stroke="#1a3c5b" stroke-width="2"/>
+  <text x="1130" y="280" font-family="Space Grotesk" font-size="18" font-weight="500" text-anchor="middle" fill="#1a3c5b">Structured</text>
+  <text x="1130" y="310" font-family="Space Grotesk" font-size="18" font-weight="500" text-anchor="middle" fill="#1a3c5b">Objective</text>
+  <text x="1130" y="340" font-family="Space Grotesk" font-size="18" font-weight="500" text-anchor="middle" fill="#1a3c5b">Output</text>
+  
+  <!-- Framework Properties -->
+  <rect x="80" y="600" width="1040" height="60" rx="8" fill="#1a3c5b" fill-opacity="0.1"/>
+  <text x="150" y="630" font-family="Space Grotesk" font-size="16" font-weight="500" text-anchor="middle" fill="#1a3c5b">E-Prime</text>
+  <text x="350" y="630" font-family="Space Grotesk" font-size="16" font-weight="500" text-anchor="middle" fill="#1a3c5b">Configurable Detail</text>
+  <text x="600" y="630" font-family="Space Grotesk" font-size="16" font-weight="500" text-anchor="middle" fill="#1a3c5b">Adjustable Length</text>
+  <text x="850" y="630" font-family="Space Grotesk" font-size="16" font-weight="500" text-anchor="middle" fill="#1a3c5b">Variable Complexity</text>
+  <text x="1050" y="630" font-family="Space Grotesk" font-size="16" font-weight="500" text-anchor="middle" fill="#1a3c5b">Dry Style</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+        markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a3c5b"/>
+    </marker>
+  </defs>
+</svg>

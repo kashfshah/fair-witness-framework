@@ -1,3 +1,12 @@
+<!--
+Fair Witness Bot Framework
+Copyright (c) 2025 Fair Witness Bot
+
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
+International License (CC BY-SA 4.0).
+https://creativecommons.org/licenses/by-sa/4.0/
+-->
+
 # Understanding the Fair Witness Concept
 
 The concept of a Fair Witness originates from Robert A. Heinlein's novel "Stranger in a Strange Land." This article examines how this literary concept provides the foundation for objective AI interactions.

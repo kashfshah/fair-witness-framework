@@ -1,3 +1,12 @@
+<!--
+Fair Witness Bot Framework
+Copyright (c) 2025 Fair Witness Bot
+
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
+International License (CC BY-SA 4.0).
+https://creativecommons.org/licenses/by-sa/4.0/
+-->
+
 # Fair Witness Bot Website Plan
 
 ## Purpose

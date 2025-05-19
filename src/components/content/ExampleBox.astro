@@ -1,0 +1,225 @@
+---
+/**
+ * @license
+ * Fair Witness Bot Framework
+ * Copyright (c) 2025 Fair Witness Bot
+ * This source code contains material licensed under the Creative Commons
+ * Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+ * https://creativecommons.org/licenses/by-sa/4.0/
+ */
+
+
+/**
+ * ExampleBox Component
+ * 
+ * Displays an example prompt for the Fair Witness Framework with progressive complexity levels.
+ */
+
+export interface Props {
+  /**
+   * Title of the example box
+   */
+  title: string;
+  
+  /**
+   * The complexity level of the example
+   * @default "beginner"
+   */
+  level: "beginner" | "intermediate" | "advanced" | "expert";
+  
+  /**
+   * The prompt content to display
+   */
+  prompt: string;
+  
+  /**
+   * Optional instructions for using the prompt
+   */
+  instruction?: string;
+  
+  /**
+   * Optional configuration to display with the example
+   */
+  config?: string;
+  
+  /**
+   * The primary epistemic function this example demonstrates
+   */
+  primaryFunction?: "observer" | "evaluator" | "analyst" | "synthesist" | "communicator";
+  
+  /**
+   * Optional icon to display
+   * @default undefined
+   */
+  icon?: string;
+}
+
+const { 
+  title, 
+  level = "beginner", 
+  prompt, 
+  instruction = "Try with your configuration:", 
+  config,
+  primaryFunction,
+  icon
+} = Astro.props;
+
+// Icon mapping
+const icons = {
+  quickExample: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>`,
+  observer: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M3 12h3m12 0h3M12 3v3m0 12v3"/></svg>`,
+  evaluator: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg>`,
+  analyst: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>`,
+  synthesist: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5l6.74-6.76z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>`,
+  communicator: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
+  default: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.29 7 12 12 20.71 7"/></svg>`
+};
+
+const iconHtml = icon ? icons[icon] : (primaryFunction ? icons[primaryFunction] : icons.default);
+
+// Function color mapping
+const functionColors = {
+  observer: "#27a594",   // Teal
+  evaluator: "#3182ce",  // Blue
+  analyst: "#ff9d00",    // Amber
+  synthesist: "#805ad5", // Purple
+  communicator: "#38a169" // Green
+};
+
+// Set border color based on function or level
+const borderColor = primaryFunction 
+  ? functionColors[primaryFunction] 
+  : level === "beginner" 
+    ? "#27a594" 
+    : level === "intermediate" 
+      ? "#ff9d00" 
+      : level === "advanced" 
+        ? "#e53e3e" 
+        : "#805ad5";
+---
+
+<div class={`example-box ${level}`} data-function={primaryFunction}>
+  <div class="example-box-title">
+    <span class="icon" set:html={iconHtml} />
+    {title}
+  </div>
+  
+  {config && (
+    <div class="example-box-config">
+      <pre>{config}</pre>
+    </div>
+  )}
+  
+  <div class="example-box-content">
+    <p>{instruction}</p>
+  </div>
+  
+  <div class="example-box-prompt">
+    <pre>{prompt}</pre>
+  </div>
+</div>
+
+<style define:vars={{ borderColor }}>
+  .example-box {
+    background-color: rgba(224, 229, 236, 0.3); /* Light gray background */
+    border-left: 4px solid var(--borderColor); /* Dynamic accent color */
+    border-radius: 6px;
+    padding: 1.25rem;
+    margin: 1.75rem 0;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .dark .example-box {
+    background-color: rgba(26, 60, 91, 0.15); /* Darker background for dark mode */
+  }
+  
+  .example-box-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--borderColor);
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 0.5rem;
+  }
+  
+  .icon {
+    display: flex;
+    align-items: center;
+    color: var(--borderColor);
+  }
+  
+  .example-box-content {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .example-box-config {
+    background-color: rgba(26, 60, 91, 0.07);
+    border-radius: 4px;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    overflow-x: auto;
+  }
+  
+  .dark .example-box-config {
+    background-color: rgba(26, 60, 91, 0.3);
+  }
+  
+  .example-box-prompt {
+    background-color: rgba(26, 60, 91, 0.05);
+    border-radius: 4px;
+    padding: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    white-space: pre-wrap;
+    overflow-x: auto;
+  }
+  
+  .dark .example-box-prompt {
+    background-color: rgba(26, 60, 91, 0.25);
+  }
+  
+  pre {
+    margin: 0;
+    white-space: pre-wrap;
+  }
+  
+  /* Progressive complexity styles */
+  .beginner {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .intermediate {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+  }
+  
+  .advanced {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+  }
+  
+  .expert {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  }
+  
+  @media (max-width: 768px) {
+    .example-box {
+      padding: 1rem;
+    }
+    
+    .example-box-title {
+      font-size: 1rem;
+    }
+    
+    .example-box-content,
+    .example-box-prompt,
+    .example-box-config {
+      font-size: 0.8rem;
+    }
+  }
+</style>
