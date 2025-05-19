@@ -63,7 +63,7 @@ export default {
             }
           },
         },
-        dark: {
+        invert: {
           css: {
             color: theme('colors.secondary'),
             p: {

@@ -1,0 +1,46 @@
+---
+/**
+ * @component ProseContent
+ * @description Provides consistent typography styling for content-heavy pages with dark mode support
+ */
+---
+
+<div class="prose prose-lg dark:prose-invert max-w-none">
+  <slot />
+</div>
+
+<style>
+  :root {
+    --color-primary: #1a3c5b;
+    --color-secondary: #e0e5ec;
+    --color-accent1: #ff9d00;
+    --color-accent2: #27a594;
+  }
+
+  /* Additional style overrides to ensure text visibility in dark mode */
+  :global(.dark) .prose {
+    color: var(--color-secondary);
+  }
+  
+  :global(.dark) .prose h1,
+  :global(.dark) .prose h2,
+  :global(.dark) .prose h3,
+  :global(.dark) .prose h4,
+  :global(.dark) .prose h5,
+  :global(.dark) .prose h6,
+  :global(.dark) .prose p,
+  :global(.dark) .prose li,
+  :global(.dark) .prose blockquote {
+    color: var(--color-secondary) !important;
+  }
+  
+  :global(.dark) .prose strong {
+    color: var(--color-accent1) !important;
+  }
+
+  /* Handle list markers specifically */
+  :global(.dark) .prose ul > li::before,
+  :global(.dark) .prose ol > li::before {
+    color: var(--color-accent1) !important;
+  }
+</style>

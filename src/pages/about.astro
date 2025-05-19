@@ -10,6 +10,7 @@
 
 
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ProseContent from '../components/shared/ProseContent.astro';
 ---
 
 <BaseLayout title="About the Function-Epistemic Framework">
@@ -26,24 +27,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   
   <section class="py-12">
     <div class="container">
-      <div class="max-w-3xl mx-auto text-primary dark:text-secondary">
-        <h2 class="text-primary dark:text-secondary text-2xl font-display font-bold mt-8 mb-4">Origin and Inspiration</h2>
+      <div class="max-w-3xl mx-auto">
+        <ProseContent>
+        <h2>Origin and Inspiration</h2>
         
-        <p class="text-primary dark:text-secondary my-4">
+        <p>
           The Function-Epistemic Hybrid Framework draws inspiration from Robert A. Heinlein's concept of the "Fair Witness" introduced in his 1961 novel "Stranger in a Strange Land." In the novel, Fair Witnesses serve as professional observers trained to observe and report with rigorous accuracy and objectivity, without interpretation or inference.
         </p>
         
-        <p class="text-primary dark:text-secondary my-4">
+        <p>
           When asked to describe the color of a house visible only from one side, a Fair Witness would say: "The house appears white on this side," rather than "The house looks white." This distinction reflects the commitment to epistemological humility and precision that guides the Framework's approach.
         </p>
         
-        <h2 class="text-primary dark:text-secondary text-2xl font-display font-bold mt-8 mb-4">Addressing LLM Limitations</h2>
+        <h2>Addressing LLM Limitations</h2>
         
-        <p class="text-primary dark:text-secondary my-4">
+        <p>
           Contemporary Large Language Models offer powerful capabilities yet encounter several epistemological challenges:
         </p>
         
-        <ul class="text-primary dark:text-secondary list-disc pl-6 my-4 space-y-2">
+        <ul>
           <li>Indistinct boundaries between observation and interpretation</li>
           <li>Limited awareness of knowledge boundaries</li>
           <li>Overconfidence in uncertain domains</li>
@@ -51,52 +53,52 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <li>Inconsistent sourcing and reasoning transparency</li>
         </ul>
         
-        <p class="text-primary dark:text-secondary my-4">
+        <p>
           These limitations contribute to hallucinations, misleading outputs, and imprecise uncertainty communication. The Function-Epistemic Framework tackles these challenges through structured epistemic functions and methodical knowledge processing.
         </p>
         
-        <h2 class="text-primary dark:text-secondary text-2xl font-display font-bold mt-8 mb-4">Intellectual Foundation</h2>
+        <h2>Intellectual Foundation</h2>
         
-        <p class="text-primary dark:text-secondary my-4">
+        <p>
           The Framework incorporates influences from multiple intellectual traditions:
         </p>
         
-        <ul class="text-primary dark:text-secondary list-disc pl-6 my-4 space-y-2">
-          <li><strong class="text-accent1 font-semibold">Isaac Asimov:</strong> Analysis of human-machine intelligence boundaries</li>
-          <li><strong class="text-accent1 font-semibold">Robert Anton Wilson:</strong> Epistemological models and reality filtering</li>
-          <li><strong class="text-accent1 font-semibold">William Gibson:</strong> Human-technology interface dynamics</li>
-          <li><strong class="text-accent1 font-semibold">Neal Stephenson:</strong> Complex systems and knowledge organization</li>
+        <ul>
+          <li><strong>Isaac Asimov:</strong> Analysis of human-machine intelligence boundaries</li>
+          <li><strong>Robert Anton Wilson:</strong> Epistemological models and reality filtering</li>
+          <li><strong>William Gibson:</strong> Human-technology interface dynamics</li>
+          <li><strong>Neal Stephenson:</strong> Complex systems and knowledge organization</li>
         </ul>
         
-        <p class="text-primary dark:text-secondary my-4">
+        <p>
           The Framework applies principles from general semantics, particularly Alfred Korzybski's work on E-Prime language. This approach eliminates forms of the verb "to be" to encourage more precise thinking and communication while reducing absolutist assertions.
         </p>
         
-        <h2 class="text-primary dark:text-secondary text-2xl font-display font-bold mt-8 mb-4">The Five Epistemic Functions</h2>
+        <h2>The Five Epistemic Functions</h2>
         
-        <p class="text-primary dark:text-secondary my-4">
+        <p>
           The Function-Epistemic Framework separates knowledge processing into five distinct epistemic roles:
         </p>
         
-        <ul class="text-primary dark:text-secondary list-disc pl-6 my-4 space-y-2">
-          <li><strong class="text-accent1 font-semibold">Observer:</strong> Documents factual information without interpretation</li>
-          <li><strong class="text-accent1 font-semibold">Evaluator:</strong> Applies explicit criteria to assess information quality</li>
-          <li><strong class="text-accent1 font-semibold">Analyst:</strong> Identifies patterns, relationships, and inconsistencies</li>
-          <li><strong class="text-accent1 font-semibold">Synthesist:</strong> Integrates multiple perspectives and resolves contradictions</li>
-          <li><strong class="text-accent1 font-semibold">Communicator:</strong> Adapts complex findings for appropriate audience comprehension</li>
+        <ul>
+          <li><strong>Observer:</strong> Documents factual information without interpretation</li>
+          <li><strong>Evaluator:</strong> Applies explicit criteria to assess information quality</li>
+          <li><strong>Analyst:</strong> Identifies patterns, relationships, and inconsistencies</li>
+          <li><strong>Synthesist:</strong> Integrates multiple perspectives and resolves contradictions</li>
+          <li><strong>Communicator:</strong> Adapts complex findings for appropriate audience comprehension</li>
         </ul>
         
-        <p class="text-primary dark:text-secondary my-4">
+        <p>
           This structured approach enhances transparency by explicitly delineating different aspects of knowledge processing and maintaining clear boundaries between functions.
         </p>
         
-        <h2 class="text-primary dark:text-secondary text-2xl font-display font-bold mt-8 mb-4">Domain Applications</h2>
+        <h2>Domain Applications</h2>
         
-        <p class="text-primary dark:text-secondary my-4">
+        <p>
           The Function-Epistemic Framework provides particular value in domains requiring:
         </p>
         
-        <ul class="text-primary dark:text-secondary list-disc pl-6 my-4 space-y-2">
+        <ul>
           <li>Technical documentation with precise capability and limitation descriptions</li>
           <li>Academic research distinguishing clearly between observation and interpretation</li>
           <li>Business analysis integrating multiple stakeholder perspectives</li>
@@ -104,25 +106,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <li>Decision support systems with transparent reasoning processes</li>
         </ul>
         
-        <h2 class="text-primary dark:text-secondary text-2xl font-display font-bold mt-8 mb-4">Open Development Model</h2>
+        <h2>Open Development Model</h2>
         
-        <p class="text-primary dark:text-secondary my-4">
+        <p>
           The project follows open development principles, providing free access to the framework specification, implementation examples, and educational resources. The maintainers welcome community contributions to expand documentation, refine implementations, and enhance the framework capabilities.
         </p>
         
-        <h2 class="text-primary dark:text-secondary text-2xl font-display font-bold mt-8 mb-4">Development Roadmap</h2>
+        <h2>Development Roadmap</h2>
         
-        <p class="text-primary dark:text-secondary my-4">
+        <p>
           The project development path includes:
         </p>
         
-        <ul class="text-primary dark:text-secondary list-disc pl-6 my-4 space-y-2">
+        <ul>
           <li>Platform-specific implementations across major LLM providers</li>
           <li>Interactive configuration tools for function customization</li>
           <li>Domain-specific templates for common application scenarios</li>
           <li>Research into quantitative epistemic quality metrics</li>
           <li>Community contribution pathways for framework evolution</li>
         </ul>
+        </ProseContent>
       </div>
     </div>
   </section>
