@@ -132,5 +132,6 @@ Under the following terms:
 
 ## Acknowledgments
 
+- This project was created entirely by Claude 3.7 Sonnet (Thinking) in conjunction with Windsurf Next
 - Robert A. Heinlein for the Fair Witness concept in "Stranger in a Strange Land"
 - The open source community for tools and frameworks
