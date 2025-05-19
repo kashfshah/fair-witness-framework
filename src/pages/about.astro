@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About">
+  <section class="py-16 bg-gradient-to-b from-secondary to-white dark:from-primary dark:to-primary/80">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl font-display font-bold mb-6">About the Project</h1>
+        <p class="text-xl mb-4 text-primary/80 dark:text-secondary/80">
+          The origins and philosophy behind the Fair Witness Framework
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-12">
+    <div class="container">
+      <div class="max-w-3xl mx-auto prose prose-lg dark:prose-invert">
+        <h2>The Fair Witness Origin</h2>
+        
+        <p>
+          The Fair Witness Bot project draws inspiration from Robert A. Heinlein's concept of the "Fair Witness" introduced in his 1961 novel "Stranger in a Strange Land." In the novel, Fair Witnesses function as professional observers trained to observe and report with absolute accuracy and objectivity, without interpretation or inference.
+        </p>
+        
+        <p>
+          When asked to describe the color of a house visible only from one side, a Fair Witness would say: "The house appears white on this side," rather than "The house looks white." This nuanced distinction exemplifies the Fair Witness commitment to epistemological humility and precision.
+        </p>
+        
+        <h2>The Problem with Current LLMs</h2>
+        
+        <p>
+          Contemporary Large Language Models demonstrate remarkable capabilities but struggle with several fundamental challenges:
+        </p>
+        
+        <ul>
+          <li>Blurring the line between observation and interpretation</li>
+          <li>Lack of awareness regarding knowledge boundaries</li>
+          <li>Inappropriate certainty in statements</li>
+          <li>Unbalanced presentation of competing perspectives</li>
+          <li>Inconsistent citation of sources and reasoning</li>
+        </ul>
+        
+        <p>
+          These limitations lead to issues like hallucinations, misleading outputs, and failures to adequately convey uncertainty. The Fair Witness Framework addresses these challenges through a structured epistemological approach.
+        </p>
+        
+        <h2>Literary and Philosophical Influences</h2>
+        
+        <p>
+          Beyond Heinlein, the project draws influence from several key thinkers:
+        </p>
+        
+        <ul>
+          <li><strong>Isaac Asimov:</strong> Exploration of the boundaries between human and machine intelligence</li>
+          <li><strong>Robert Anton Wilson:</strong> Epistemological models and reality tunnels</li>
+          <li><strong>William Gibson:</strong> The interface between humans and technology</li>
+          <li><strong>Neal Stephenson:</strong> Complex systems and knowledge representation</li>
+        </ul>
+        
+        <p>
+          The framework also incorporates principles from general semantics, particularly Alfred Korzybski's work on E-Prime language, which avoids forms of the verb "to be" to promote more precise thinking and communication.
+        </p>
+        
+        <h2>The Function-Epistemic Approach</h2>
+        
+        <p>
+          The Fair Witness Framework separates different knowledge processing functions into distinct epistemic roles:
+        </p>
+        
+        <ul>
+          <li><strong>Observer:</strong> Records factual information without interpretation</li>
+          <li><strong>Evaluator:</strong> Applies explicit criteria to assess information</li>
+          <li><strong>Analyst:</strong> Identifies patterns, relationships, and inconsistencies</li>
+          <li><strong>Synthesist:</strong> Integrates multiple perspectives and resolves contradictions</li>
+          <li><strong>Communicator:</strong> Translates complex findings into accessible language</li>
+        </ul>
+        
+        <p>
+          This separation allows for more transparent, balanced communication by explicitly delineating different aspects of knowledge processing.
+        </p>
+        
+        <h2>Practical Applications</h2>
+        
+        <p>
+          The Fair Witness Framework proves particularly valuable in domains requiring:
+        </p>
+        
+        <ul>
+          <li>Technical documentation with precise description of capabilities and limitations</li>
+          <li>Academic research requiring clear distinction between fact and interpretation</li>
+          <li>Business analysis balancing multiple stakeholder perspectives</li>
+          <li>Educational content presenting balanced viewpoints on complex topics</li>
+          <li>Decision support systems requiring transparent reasoning processes</li>
+        </ul>
+        
+        <h2>Open Source Philosophy</h2>
+        
+        <p>
+          The Fair Witness Bot project embraces open source principles, providing free access to the framework specification, implementation examples, and educational resources. The project welcomes contributions from the community to expand documentation, improve implementations, and develop the framework further.
+        </p>
+        
+        <h2>Future Directions</h2>
+        
+        <p>
+          The project roadmap includes:
+        </p>
+        
+        <ul>
+          <li>Expanded platform-specific implementations and integrations</li>
+          <li>Interactive demonstration tools for testing configurations</li>
+          <li>Domain-specific template libraries for common use cases</li>
+          <li>Research into automated evaluation of epistemological quality</li>
+          <li>Community-driven expansion of the framework</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-12 bg-secondary/30 dark:bg-primary/30">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-display font-bold mb-6">Join the Community</h2>
+        <p class="text-xl mb-8 text-primary/80 dark:text-secondary/80">
+          Contribute to the Fair Witness Project
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://github.com/yourusername/fairwitnessbot" target="_blank" rel="noopener noreferrer" class="btn btn-primary">GitHub Repository</a>
+          <a href="/implementation" class="btn btn-secondary">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

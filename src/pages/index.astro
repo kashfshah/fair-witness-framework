@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Home">
+  <section class="py-20 bg-gradient-to-b from-secondary to-white dark:from-primary dark:to-primary/80">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-display font-bold mb-6">The Fair Witness Framework</h1>
+        <p class="text-xl mb-8 text-primary/80 dark:text-secondary/80">
+          Configure LLMs for structured, objective responses using epistemic functions
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/framework" class="btn btn-primary">Explore the Framework</a>
+          <a href="/implementation" class="btn btn-secondary">Implementation Guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16">
+    <div class="container">
+      <h2 class="text-3xl font-display font-bold text-center mb-12">The Function-Epistemic Approach</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+        <div class="card">
+          <h3 class="text-xl font-display font-medium mb-4 text-primary dark:text-accent1">Observer</h3>
+          <p>Records factual information without interpretation or judgment. Reports verifiable data points and acknowledges information gaps.</p>
+        </div>
+        
+        <div class="card">
+          <h3 class="text-xl font-display font-medium mb-4 text-primary dark:text-accent1">Evaluator</h3>
+          <p>Examines information against established criteria. Applies explicit standards and maintains transparency about evaluation methods.</p>
+        </div>
+        
+        <div class="card">
+          <h3 class="text-xl font-display font-medium mb-4 text-primary dark:text-accent1">Analyst</h3>
+          <p>Identifies patterns, relationships, and inconsistencies between data points. Maps connections between concepts.</p>
+        </div>
+        
+        <div class="card">
+          <h3 class="text-xl font-display font-medium mb-4 text-primary dark:text-accent1">Synthesist</h3>
+          <p>Integrates multiple perspectives into coherent models. Combines complementary viewpoints and resolves apparent contradictions.</p>
+        </div>
+        
+        <div class="card">
+          <h3 class="text-xl font-display font-medium mb-4 text-primary dark:text-accent1">Communicator</h3>
+          <p>Translates complex findings into accessible language. Adapts complexity to audience needs while maintaining precision.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-secondary/30 dark:bg-primary/30">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-3xl font-display font-bold mb-6">The Fair Witness Concept</h2>
+          <p class="mb-4">The concept originates from Robert A. Heinlein's novel "Stranger in a Strange Land." Fair Witnesses function as professional observers who report exactly what they perceive without interpretation or inference.</p>
+          
+          <p class="mb-4">When asked to describe the color of a house visible only from one side, a Fair Witness would say: "The house appears white on this side," rather than simply "The house looks white."</p>
+          
+          <p class="mb-6">This distinction illustrates the profound difference between observation and interpretation—a Fair Witness recognizes the limitations of perception and communicates with precision about those limitations.</p>
+          
+          <a href="/literary-influences" class="btn btn-primary">Literary Influences</a>
+        </div>
+        
+        <div>
+          <h2 class="text-3xl font-display font-bold mb-6">Application to AI</h2>
+          <p class="mb-4">Contemporary Large Language Models struggle with distinguishing between observation and interpretation, maintaining awareness of knowledge boundaries, and communicating certainty levels appropriately.</p>
+          
+          <p class="mb-4">The Function-Epistemic Framework addresses these challenges through structured epistemological functions, preventing hallucinations and maintaining clear boundaries between fact and interpretation.</p>
+          
+          <p class="mb-6">Through precise configuration, LLMs can produce more reliable, balanced outputs across domains ranging from technical documentation to creative exploration.</p>
+          
+          <a href="/examples" class="btn btn-primary">See Examples</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16">
+    <div class="container">
+      <h2 class="text-3xl font-display font-bold text-center mb-12">Implementation Features</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card">
+          <h3 class="text-xl font-display font-medium mb-4">YAML Configuration</h3>
+          <p class="mb-4">Simple, structured configuration format to control LLM behavior with precise parameters and constraints.</p>
+          <a href="/yaml-configuration" class="text-accent1 hover:underline">Configuration Guide →</a>
+        </div>
+        
+        <div class="card">
+          <h3 class="text-xl font-display font-medium mb-4">E-Prime Language</h3>
+          <p class="mb-4">Language pattern that avoids forms of "to be" verbs, encouraging precision and reducing absolutism in statements.</p>
+          <a href="/e-prime" class="text-accent1 hover:underline">E-Prime Explanation →</a>
+        </div>
+        
+        <div class="card">
+          <h3 class="text-xl font-display font-medium mb-4">Epistemic Functions</h3>
+          <p class="mb-4">Structured approach to knowledge processing through observer, evaluator, analyst, synthesist, and communicator roles.</p>
+          <a href="/framework" class="text-accent1 hover:underline">Framework Details →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-secondary/30 dark:bg-primary/30">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-display font-bold mb-6">Ready to Implement?</h2>
+        <p class="text-xl mb-8 text-primary/80 dark:text-secondary/80">
+          Get started with the Fair Witness Framework in your LLM applications
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/quick-start" class="btn btn-primary">Quick Start Guide</a>
+          <a href="/yaml-configuration" class="btn btn-secondary">YAML Configuration</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,258 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Function-Epistemic Framework">
+  <section class="py-16 bg-gradient-to-b from-secondary to-white dark:from-primary dark:to-primary/80">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl font-display font-bold mb-6">The Function-Epistemic Framework</h1>
+        <p class="text-xl mb-4 text-primary/80 dark:text-secondary/80">
+          A structured approach to knowledge processing through multiple epistemological functions
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-12">
+    <div class="container">
+      <div class="prose prose-lg dark:prose-invert max-w-3xl mx-auto">
+        <p>
+          The Function-Epistemic Hybrid Framework provides a structured approach to LLM interactions by separating different epistemic functions. This framework addresses common challenges in AI communication:
+        </p>
+        
+        <ul>
+          <li>Distinguishing between observation and interpretation</li>
+          <li>Maintaining awareness of knowledge boundaries</li>
+          <li>Communicating certainty levels appropriately</li>
+          <li>Providing balanced multi-perspective analysis</li>
+        </ul>
+        
+        <p>
+          By configuring an LLM to operate through multiple epistemic functions, users can obtain more reliable, balanced, and transparent AI outputs.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-12">
+    <div class="container">
+      <h2 class="text-3xl font-display font-bold text-center mb-12">The Five Epistemic Functions</h2>
+      
+      <div class="max-w-4xl mx-auto space-y-12">
+        <div class="card">
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 flex items-center justify-center bg-primary/10 dark:bg-accent1/20 rounded-full flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-2xl font-display font-medium mb-3">Observer Function</h3>
+              <p class="mb-4">The Observer function collects and presents factual information without interpretation or judgment.</p>
+              
+              <ul class="list-disc list-inside space-y-2 text-primary/80 dark:text-secondary/80">
+                <li>Reports verifiable data points</li>
+                <li>Acknowledges information gaps</li>
+                <li>Avoids speculative extensions</li>
+                <li>Presents sources when available</li>
+              </ul>
+              
+              <div class="mt-4 p-4 bg-secondary/20 dark:bg-primary/20 rounded">
+                <p class="italic text-primary/70 dark:text-secondary/70">Example: "The document contains 4 sections and 27 paragraphs. The text discusses climate data from 1990-2020. The document does not contain information about future projections."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 flex items-center justify-center bg-primary/10 dark:bg-accent1/20 rounded-full flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0l-3.75-3.75M17.25 21L21 17.25" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-2xl font-display font-medium mb-3">Evaluator Function</h3>
+              <p class="mb-4">The Evaluator function examines information against established criteria.</p>
+              
+              <ul class="list-disc list-inside space-y-2 text-primary/80 dark:text-secondary/80">
+                <li>Applies explicit standards and benchmarks</li>
+                <li>Measures against objective metrics</li>
+                <li>Considers multiple evaluation frameworks</li>
+                <li>Maintains transparency about evaluation methods</li>
+              </ul>
+              
+              <div class="mt-4 p-4 bg-secondary/20 dark:bg-primary/20 rounded">
+                <p class="italic text-primary/70 dark:text-secondary/70">Example: "When evaluated against WCAG 2.1 accessibility standards, the website meets 12 of 14 AA criteria. The two unmet criteria involve color contrast (1.4.3) and keyboard navigation (2.1.1)."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 flex items-center justify-center bg-primary/10 dark:bg-accent1/20 rounded-full flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-2xl font-display font-medium mb-3">Analyst Function</h3>
+              <p class="mb-4">The Analyst function identifies patterns, relationships, and inconsistencies.</p>
+              
+              <ul class="list-disc list-inside space-y-2 text-primary/80 dark:text-secondary/80">
+                <li>Detects correlations between data points</li>
+                <li>Recognizes structural similarities across domains</li>
+                <li>Identifies logical inconsistencies</li>
+                <li>Maps relationships between concepts</li>
+              </ul>
+              
+              <div class="mt-4 p-4 bg-secondary/20 dark:bg-primary/20 rounded">
+                <p class="italic text-primary/70 dark:text-secondary/70">Example: "The quarterly sales data reveals three patterns: 1) consistent 15-20% growth in Q4, 2) correlation between marketing spend and new customer acquisition, and 3) regional variations that correspond to local economic indicators."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 flex items-center justify-center bg-primary/10 dark:bg-accent1/20 rounded-full flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-2xl font-display font-medium mb-3">Synthesist Function</h3>
+              <p class="mb-4">The Synthesist function integrates multiple perspectives into coherent models.</p>
+              
+              <ul class="list-disc list-inside space-y-2 text-primary/80 dark:text-secondary/80">
+                <li>Combines complementary viewpoints</li>
+                <li>Resolves apparent contradictions</li>
+                <li>Creates unified explanatory frameworks</li>
+                <li>Generates coherent narratives from disparate inputs</li>
+              </ul>
+              
+              <div class="mt-4 p-4 bg-secondary/20 dark:bg-primary/20 rounded">
+                <p class="italic text-primary/70 dark:text-secondary/70">Example: "The three competing theories of consumer behavior can be integrated into a unified framework that accounts for both rational decision-making and emotional influences, while acknowledging the contextual factors that determine which predominates in specific situations."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 flex items-center justify-center bg-primary/10 dark:bg-accent1/20 rounded-full flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-2xl font-display font-medium mb-3">Communicator Function</h3>
+              <p class="mb-4">The Communicator function translates complex findings into accessible language.</p>
+              
+              <ul class="list-disc list-inside space-y-2 text-primary/80 dark:text-secondary/80">
+                <li>Adapts language complexity to audience needs</li>
+                <li>Structures information for logical flow</li>
+                <li>Balances precision with readability</li>
+                <li>Reinforces key points through strategic repetition</li>
+              </ul>
+              
+              <div class="mt-4 p-4 bg-secondary/20 dark:bg-primary/20 rounded">
+                <p class="italic text-primary/70 dark:text-secondary/70">Example: "For technical audiences: 'The algorithm employs a gradient descent optimization with regularization parameters λ=0.01.' For general audiences: 'The system learns patterns while avoiding overfitting to unusual examples, similar to how humans learn general rules rather than memorizing exceptions.'"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-12 bg-secondary/30 dark:bg-primary/30">
+    <div class="container">
+      <h2 class="text-3xl font-display font-bold text-center mb-12">E-Prime Language Pattern</h2>
+      
+      <div class="max-w-3xl mx-auto prose prose-lg dark:prose-invert">
+        <p>
+          The framework utilizes E-Prime language patterns, which avoid forms of the verb "to be" (is, are, was, were, etc). This linguistic approach encourages:
+        </p>
+        
+        <ol>
+          <li>Greater precision in description</li>
+          <li>Explicit attribution of qualities</li>
+          <li>Awareness of perspective limitations</li>
+          <li>Reduced absolutism in statements</li>
+        </ol>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose mt-8">
+          <div class="p-4 bg-red-100 dark:bg-red-900/30 rounded">
+            <h4 class="font-display font-medium mb-2">Standard English</h4>
+            <p class="text-red-800 dark:text-red-200">"This solution is optimal for your needs."</p>
+            <p class="text-red-800 dark:text-red-200">"The market was volatile last quarter."</p>
+            <p class="text-red-800 dark:text-red-200">"These results are conclusive."</p>
+          </div>
+          
+          <div class="p-4 bg-green-100 dark:bg-green-900/30 rounded">
+            <h4 class="font-display font-medium mb-2">E-Prime</h4>
+            <p class="text-green-800 dark:text-green-200">"This solution meets 8 of your 10 stated requirements."</p>
+            <p class="text-green-800 dark:text-green-200">"The market fluctuated by 15% last quarter."</p>
+            <p class="text-green-800 dark:text-green-200">"These results support the hypothesis with 95% confidence."</p>
+          </div>
+        </div>
+        
+        <p class="mt-8">
+          E-Prime language promotes more nuanced, precise communication by requiring specificity about observations, relationships, and degrees of certainty.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-12">
+    <div class="container">
+      <h2 class="text-3xl font-display font-bold text-center mb-12">Implementation Configuration</h2>
+      
+      <div class="max-w-3xl mx-auto">
+        <div class="card mb-8">
+          <pre class="language-yaml"><code>emulation:
+  type: Fair Witness Bot
+  framework: Function-Epistemic Hybrid Framework
+  epistemic_functions:
+    - observer
+    - evaluator
+    - analyst
+    - synthesist
+    - communicator
+  constraints:
+    natural_language:
+      style: E-Prime
+  output:
+    type: natural language
+    detail_level: range(moderate,high)
+    length: range(moderate, high)
+    complexity: range(low, high)
+    style: dry</code></pre>
+        </div>
+        
+        <div class="flex justify-center">
+          <a href="/yaml-configuration" class="btn btn-primary">Full Configuration Guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-12 bg-secondary/30 dark:bg-primary/30">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-display font-bold mb-6">Ready to Implement?</h2>
+        <p class="text-xl mb-8 text-primary/80 dark:text-secondary/80">
+          Get started with the Fair Witness Framework in your LLM applications
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/quick-start" class="btn btn-primary">Quick Start Guide</a>
+          <a href="/examples" class="btn btn-secondary">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

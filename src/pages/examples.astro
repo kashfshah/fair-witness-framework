@@ -1,0 +1,200 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Examples">
+  <section class="py-16 bg-gradient-to-b from-secondary to-white dark:from-primary dark:to-primary/80">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl font-display font-bold mb-6">Framework Examples</h1>
+        <p class="text-xl mb-4 text-primary/80 dark:text-secondary/80">
+          See the Fair Witness Framework in action with practical examples
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-12">
+    <div class="container">
+      <div class="max-w-3xl mx-auto prose prose-lg dark:prose-invert">
+        <p>
+          These examples demonstrate how the Function-Epistemic Hybrid Framework transforms LLM outputs across different domains. Each example shows the same prompt with and without the framework applied.
+        </p>
+      </div>
+      
+      <div class="mt-12 max-w-4xl mx-auto">
+        <div class="card mb-12">
+          <h2 class="text-2xl font-display font-bold mb-6">Technical Documentation Example</h2>
+          
+          <div class="mb-8">
+            <h3 class="text-xl font-display font-medium mb-3">Prompt</h3>
+            <div class="p-4 bg-secondary/20 dark:bg-primary/20 rounded">
+              <p class="italic">"Explain the difference between REST and GraphQL APIs."</p>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-xl font-display font-medium mb-3 text-red-600 dark:text-red-400">Standard Response</h3>
+              <div class="p-4 bg-red-100 dark:bg-red-900/20 rounded h-full">
+                <p class="mb-3">REST and GraphQL are two popular API architectures with different approaches to data fetching.</p>
+                
+                <p class="mb-3">REST APIs are the traditional approach, where you access resources through predefined endpoints. Each endpoint returns a fixed data structure. REST is simple, widely used, and cacheable, but it often leads to over-fetching or under-fetching of data.</p>
+                
+                <p class="mb-3">GraphQL is a newer approach developed by Facebook. It's a query language that allows clients to request exactly the data they need. GraphQL uses a single endpoint where clients can specify the exact shape and structure of the response data. This eliminates over-fetching and under-fetching issues.</p>
+                
+                <p>REST is simpler to implement for basic APIs, while GraphQL is better for complex applications with varying data requirements. The best choice depends on your specific project needs.</p>
+              </div>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-display font-medium mb-3 text-green-600 dark:text-green-400">Fair Witness Response</h3>
+              <div class="p-4 bg-green-100 dark:bg-green-900/20 rounded h-full">
+                <p class="font-medium text-accent1">Observer Function:</p>
+                <p class="mb-3">REST and GraphQL represent two different architectural approaches to API design. REST emerged around 2000, while Facebook developed GraphQL in 2015 and open-sourced it in 2018.</p>
+                
+                <p class="font-medium text-accent1">Analyst Function:</p>
+                <p class="mb-3">REST architecture organizes data access around resources with multiple endpoints, each returning complete data structures. GraphQL provides a query language with a single endpoint where clients specify exactly what data they need. This creates fundamental differences in data fetching patterns and implementation requirements.</p>
+                
+                <p class="font-medium text-accent1">Evaluator Function:</p>
+                <p class="mb-3">When evaluated against common API metrics:<br>
+                - HTTP caching: REST offers stronger native support<br>
+                - Network efficiency: GraphQL typically reduces over-fetching<br>
+                - Implementation complexity: REST requires less initial setup<br>
+                - Query flexibility: GraphQL provides more client-side control</p>
+                
+                <p class="font-medium text-accent1">Communicator Function:</p>
+                <p>This comparison does not identify one approach as universally superior. The appropriate choice depends on specific project requirements including data complexity, client needs, and team expertise.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card mb-12">
+          <h2 class="text-2xl font-display font-bold mb-6">Business Analysis Example</h2>
+          
+          <div class="mb-8">
+            <h3 class="text-xl font-display font-medium mb-3">Prompt</h3>
+            <div class="p-4 bg-secondary/20 dark:bg-primary/20 rounded">
+              <p class="italic">"How will AI affect the future of work?"</p>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-xl font-display font-medium mb-3 text-red-600 dark:text-red-400">Standard Response</h3>
+              <div class="p-4 bg-red-100 dark:bg-red-900/20 rounded h-full">
+                <p class="mb-3">AI will completely transform the future of work in the coming years. Many jobs will be automated, especially routine tasks that can be easily programmed. This will lead to job displacement in certain sectors, but will also create new opportunities in emerging fields.</p>
+                
+                <p class="mb-3">Knowledge workers will need to adapt by developing skills that complement AI, such as creative thinking, emotional intelligence, and complex problem-solving. The workforce will need to be more adaptable and commit to lifelong learning.</p>
+                
+                <p class="mb-3">AI will boost productivity dramatically, allowing companies to accomplish more with fewer human resources. This will change organizational structures and create new business models.</p>
+                
+                <p>The key to success in the AI era will be embracing these changes rather than resisting them. Workers who can collaborate effectively with AI will thrive, while those who can't adapt may struggle to remain relevant in the changing job market.</p>
+              </div>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-display font-medium mb-3 text-green-600 dark:text-green-400">Fair Witness Response</h3>
+              <div class="p-4 bg-green-100 dark:bg-green-900/20 rounded h-full">
+                <p class="font-medium text-accent1">Observer Function:</p>
+                <p class="mb-3">Current AI technologies demonstrate capabilities in pattern recognition, language processing, and some types of decision making. Recent studies from McKinsey (2023) and MIT (2022) provide conflicting estimates on job displacement, ranging from 15% to 40% of tasks facing automation potential across various industries by 2030.</p>
+                
+                <p class="font-medium text-accent1">Analyst Function:</p>
+                <p class="mb-3">Historical technological transitions suggest three primary patterns:<br>
+                1. Task automation rather than complete job elimination<br>
+                2. Creation of new job categories alongside displacement<br>
+                3. Shifts in skill valuation across labor markets</p>
+                
+                <p class="font-medium text-accent1">Synthesist Function:</p>
+                <p class="mb-3">Multiple perspectives warrant consideration:<br>
+                - Economic optimists point to productivity gains and new job creation<br>
+                - Labor advocates highlight potential workforce disruption without policy safeguards<br>
+                - Industry analysts note sector-specific impacts varying by task composition<br>
+                - Educational experts emphasize adaptation through continuous learning</p>
+                
+                <p class="font-medium text-accent1">Communicator Function:</p>
+                <p>AI will likely transform work through automation of predictable tasks, augmentation of human capabilities, and creation of new roles. The distribution of these effects appears uneven across industries, regions, and skill levels. Adapting to these changes may require both individual skill development and systemic policy responses.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <h2 class="text-2xl font-display font-bold mb-6">Research Question Example</h2>
+          
+          <div class="mb-8">
+            <h3 class="text-xl font-display font-medium mb-3">Prompt</h3>
+            <div class="p-4 bg-secondary/20 dark:bg-primary/20 rounded">
+              <p class="italic">"What causes climate change and what should we do about it?"</p>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-xl font-display font-medium mb-3 text-red-600 dark:text-red-400">Standard Response</h3>
+              <div class="p-4 bg-red-100 dark:bg-red-900/20 rounded h-full">
+                <p class="mb-3">Climate change is primarily caused by human activities that increase greenhouse gas concentrations in Earth's atmosphere. The main contributors are burning fossil fuels (coal, oil, and natural gas), deforestation, and industrial processes that release carbon dioxide, methane, and other greenhouse gases.</p>
+                
+                <p class="mb-3">These gases trap heat in the atmosphere, causing global temperatures to rise. This leads to various consequences including sea level rise, more frequent extreme weather events, ecosystem disruption, and threats to food security.</p>
+                
+                <p class="mb-3">To address climate change, we must transition to renewable energy sources like solar, wind, and hydropower. We need to improve energy efficiency, reduce deforestation, and adopt sustainable agriculture practices. Governments should implement carbon pricing, regulations, and incentives for clean technology.</p>
+                
+                <p>Individuals can help by reducing their carbon footprint through lifestyle changes like using public transportation, eating less meat, and conserving energy at home. It's crucial that we act quickly to mitigate the worst effects of climate change.</p>
+              </div>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-display font-medium mb-3 text-green-600 dark:text-green-400">Fair Witness Response</h3>
+              <div class="p-4 bg-green-100 dark:bg-green-900/20 rounded h-full">
+                <p class="font-medium text-accent1">Observer Function:</p>
+                <p class="mb-3">According to the IPCC Sixth Assessment Report (2021), human activities have increased atmospheric greenhouse gas concentrations to levels unprecedented in at least 800,000 years. Global temperature has risen approximately 1.1°C above pre-industrial levels. The report attributes this warming to human activities with >95% confidence.</p>
+                
+                <p class="font-medium text-accent1">Analyst Function:</p>
+                <p class="mb-3">Primary greenhouse gas sources include:<br>
+                - Energy production (34% of emissions)<br>
+                - Industry (24%)<br>
+                - Agriculture, forestry and land use (22%)<br>
+                - Transportation (14%)<br>
+                - Buildings (6%)</p>
+                
+                <p class="font-medium text-accent1">Evaluator Function:</p>
+                <p class="mb-3">Proposed mitigation approaches vary in:<br>
+                - Implementation timeline: immediate to long-term<br>
+                - Economic impacts: ranging from disruptive to stimulative<br>
+                - Technical readiness: commercially available to experimental<br>
+                - Political feasibility: widely accepted to controversial</p>
+                
+                <p class="font-medium text-accent1">Synthesist Function:</p>
+                <p class="mb-3">The question "what should we do" involves value judgments and tradeoffs. Multiple perspectives include:<br>
+                - Rapid decarbonization advocates emphasize existential risk<br>
+                - Economic transition proponents focus on managed change<br>
+                - Technology optimists prioritize innovation over restriction<br>
+                - Environmental justice advocates highlight equitable burden-sharing<br>
+                - Policy pragmatists emphasize politically feasible incremental steps</p>
+                
+                <p class="font-medium text-accent1">Communicator Function:</p>
+                <p>The scientific consensus identifies human greenhouse gas emissions as the primary driver of current climate change. Response options include emissions reduction, technological innovation, adaptation measures, and policy frameworks. The question of "what should we do" ultimately involves weighing scientific data alongside economic, ethical, and political considerations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-12 bg-secondary/30 dark:bg-primary/30">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-display font-bold mb-6">Ready to Implement?</h2>
+        <p class="text-xl mb-8 text-primary/80 dark:text-secondary/80">
+          Start using the Fair Witness Framework in your own applications
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/implementation" class="btn btn-primary">Implementation Guide</a>
+          <a href="/quick-start" class="btn btn-secondary">Quick Start</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

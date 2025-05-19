@@ -1,0 +1,80 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { 
+  title, 
+  description = "The Fair Witness Framework for structured, objective LLM interactions"
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <title>{title} | Fair Witness Bot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="border-b border-primary/10 dark:border-secondary/10">
+      <div class="container py-4 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <a href="/" class="font-display text-2xl font-bold">Fair Witness Bot</a>
+        </div>
+        <nav>
+          <ul class="flex gap-6">
+            <li><a href="/framework" class="hover:text-accent1">Framework</a></li>
+            <li><a href="/implementation" class="hover:text-accent1">Implementation</a></li>
+            <li><a href="/examples" class="hover:text-accent1">Examples</a></li>
+            <li><a href="/about" class="hover:text-accent1">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="mt-12 py-8 border-t border-primary/10 dark:border-secondary/10">
+      <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="font-display text-xl mb-4">Fair Witness Bot</h3>
+            <p class="text-primary/70 dark:text-secondary/70">
+              A framework for structured, objective LLM interactions based on Heinlein's Fair Witness concept.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-display text-xl mb-4">Navigation</h3>
+            <ul class="space-y-2">
+              <li><a href="/" class="hover:text-accent1">Home</a></li>
+              <li><a href="/framework" class="hover:text-accent1">Framework</a></li>
+              <li><a href="/implementation" class="hover:text-accent1">Implementation</a></li>
+              <li><a href="/examples" class="hover:text-accent1">Examples</a></li>
+              <li><a href="/about" class="hover:text-accent1">About</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-display text-xl mb-4">Resources</h3>
+            <ul class="space-y-2">
+              <li><a href="/yaml-configuration" class="hover:text-accent1">YAML Configuration</a></li>
+              <li><a href="/literary-influences" class="hover:text-accent1">Literary Influences</a></li>
+              <li><a href="https://github.com/yourusername/fairwitnessbot" target="_blank" rel="noopener noreferrer" class="hover:text-accent1">GitHub Repository</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-primary/10 dark:border-secondary/10 text-center text-primary/60 dark:text-secondary/60">
+          <p>&copy; {new Date().getFullYear()} Fair Witness Bot | All rights reserved</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
