@@ -20,7 +20,7 @@ import ExampleSection from '../components/quickstart/ExampleSection.astro';
       <div class="max-w-3xl mx-auto">
         <h1 class="text-4xl font-display font-bold mb-6">Quick Start Guide</h1>
         <p class="text-xl mb-4 text-primary/80 dark:text-secondary/80">
-          Get started with the Fair Witness Framework in minutes
+          Get started with the Fair Witness Framework in 5 simple steps
         </p>
       </div>
     </div>
@@ -31,12 +31,35 @@ import ExampleSection from '../components/quickstart/ExampleSection.astro';
       <div class="max-w-3xl mx-auto">
         <div class="prose prose-lg dark:prose-invert mb-8">
           <p>
-            This quick start guide provides the essential steps to implement the Fair Witness Framework in your LLM applications. The framework functions with any LLM that accepts system prompts or configuration instructions.
+            The Function-Epistemic Hybrid Framework works with any LLM that accepts system prompts or configuration instructions. Follow these five steps to begin using it immediately.
           </p>
         </div>
         
+        <!-- Step 1: Choose Your LLM Platform -->
         <div class="card mb-8">
-          <h2 class="text-2xl font-display font-bold mb-6">Step 1: Copy the Base Configuration</h2>
+          <h2 class="text-2xl font-display font-bold mb-6">Step 1: Choose Your LLM Platform</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div class="p-4 bg-white dark:bg-primary/40 rounded border border-primary/10 dark:border-secondary/10">
+              <h3 class="font-display font-medium mb-2">OpenAI</h3>
+              <p class="text-sm text-primary/70 dark:text-secondary/70">ChatGPT / GPT-4</p>
+            </div>
+            
+            <div class="p-4 bg-white dark:bg-primary/40 rounded border border-primary/10 dark:border-secondary/10">
+              <h3 class="font-display font-medium mb-2">Anthropic</h3>
+              <p class="text-sm text-primary/70 dark:text-secondary/70">Claude Models</p>
+            </div>
+            
+            <div class="p-4 bg-white dark:bg-primary/40 rounded border border-primary/10 dark:border-secondary/10">
+              <h3 class="font-display font-medium mb-2">Other LLMs</h3>
+              <p class="text-sm text-primary/70 dark:text-secondary/70">Compatible Systems</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 2: Copy the Fair Witness Framework -->
+        <div class="card mb-8">
+          <h2 class="text-2xl font-display font-bold mb-6">Step 2: Copy the Fair Witness Framework</h2>
           
           <div class="bg-white dark:bg-primary/50 p-4 rounded-lg mb-4">
             <pre id="base-config" class="text-sm overflow-x-auto">emulation:
@@ -64,32 +87,51 @@ import ExampleSection from '../components/quickstart/ExampleSection.astro';
           </div>
         </div>
         
+        <!-- Step 3: Paste into your LLM -->
         <div class="card mb-8">
-          <h2 class="text-2xl font-display font-bold mb-6">Step 2: Choose Your LLM Platform</h2>
+          <h2 class="text-2xl font-display font-bold mb-6">Step 3: Paste into your LLM</h2>
           
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-            <div class="p-4 bg-white dark:bg-primary/40 rounded border border-primary/10 dark:border-secondary/10">
-              <h3 class="font-display font-medium mb-2">OpenAI</h3>
-              <p class="text-sm text-primary/70 dark:text-secondary/70">ChatGPT / GPT-4</p>
+          <div class="flex gap-4 flex-wrap">
+            <div class="p-4 bg-white dark:bg-primary/40 rounded border border-primary/10 dark:border-secondary/10 flex-1 min-w-[250px]">
+              <h3 class="font-display font-medium mb-2">API Implementation</h3>
+              <p class="text-sm text-primary/70 dark:text-secondary/70 mb-2">Add to your system prompt or configuration</p>
+              <a href="/implementation" class="text-sm text-accent1 hover:underline">View API Code Examples →</a>
             </div>
             
-            <div class="p-4 bg-white dark:bg-primary/40 rounded border border-primary/10 dark:border-secondary/10">
-              <h3 class="font-display font-medium mb-2">Anthropic</h3>
-              <p class="text-sm text-primary/70 dark:text-secondary/70">Claude Models</p>
-            </div>
-            
-            <div class="p-4 bg-white dark:bg-primary/40 rounded border border-primary/10 dark:border-secondary/10">
-              <h3 class="font-display font-medium mb-2">LangChain</h3>
-              <p class="text-sm text-primary/70 dark:text-secondary/70">Framework Integration</p>
+            <div class="p-4 bg-white dark:bg-primary/40 rounded border border-primary/10 dark:border-secondary/10 flex-1 min-w-[250px]">
+              <h3 class="font-display font-medium mb-2">Web Interface</h3>
+              <p class="text-sm text-primary/70 dark:text-secondary/70 mb-2">Paste as the first message in a new conversation</p>
             </div>
           </div>
         </div>
         
-        <div class="card">
-          <h2 class="text-2xl font-display font-bold mb-6">Step 3: Implementation Examples</h2>
-          <p class="mb-6">Visit our implementation page for detailed code examples for each platform.</p>
-          <div class="flex justify-center">
-            <a href="/implementation" class="btn btn-primary">View Implementation Guide</a>
+        <!-- Step 4: Append your query -->
+        <div class="card mb-8">
+          <h2 class="text-2xl font-display font-bold mb-6">Step 4: Append your query</h2>
+          
+          <div class="bg-white dark:bg-primary/50 p-4 rounded-lg mb-4">
+            <pre id="sample-query" class="text-sm overflow-x-auto">Analyze this quarterly performance data for actionable insights:
+- Revenue: $2.7M (↑12% YoY)
+- Customer Acquisition Cost: $350 (↑8% QoQ)
+- Churn Rate: 3.2% (↓0.5% QoQ)
+- Average Contract Value: $12,500 (↑5% YoY)
+- Net Promoter Score: 42 (↓3 points QoQ)</pre>
+          </div>
+          
+          <div class="flex justify-end">
+            <button class="btn btn-secondary" data-clipboard="sample-query">Copy to Clipboard</button>
+          </div>
+        </div>
+        
+        <!-- Step 5: Send -->
+        <div class="card mb-8">
+          <h2 class="text-2xl font-display font-bold mb-6">Step 5: Send</h2>
+          
+          <p class="mb-4">Submit your query to the LLM and observe how the Fair Witness Framework structures the response using multiple epistemic functions.</p>
+          
+          <div class="p-4 bg-secondary/20 dark:bg-primary/20 rounded-lg mb-4 border-l-4 border-accent1">
+            <p class="text-sm font-medium">Pro Tip</p>
+            <p class="text-sm">Compare responses with and without the framework to see the difference in objectivity and clarity.</p>
           </div>
         </div>
       </div>
@@ -102,13 +144,14 @@ import ExampleSection from '../components/quickstart/ExampleSection.astro';
   <section class="py-12 bg-secondary/30 dark:bg-primary/30">
     <div class="container">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl font-display font-bold mb-6">Need More Help?</h2>
+        <h2 class="text-3xl font-display font-bold mb-6">Ready for Advanced Implementation?</h2>
         <p class="text-xl mb-8 text-primary/80 dark:text-secondary/80">
-          Explore our detailed guides or contribute to the project
+          Explore detailed API implementations and more complex examples
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/implementation" class="btn btn-primary">Full Implementation Guide</a>
-          <a href="/examples" class="btn btn-secondary">View Examples</a>
+          <a href="/implementation" class="btn btn-primary">Implementation Guide</a>
+          <a href="/examples" class="btn btn-secondary">View More Examples</a>
+          <a href="/framework" class="btn btn-secondary">Explore Framework Details</a>
         </div>
       </div>
     </div>
