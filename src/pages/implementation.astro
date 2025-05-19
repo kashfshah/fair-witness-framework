@@ -174,9 +174,9 @@ emulation:
             title="Technical Documentation Example"
             level="advanced"
             primaryFunction="analyst"
-            config="epistemic_functions: ['observer', 'analyst', 'communicator']
-output: {detail_level: high, style: dry}"
-            prompt="Analyze this code snippet for potential issues:
+            config={`epistemic_functions: ["observer", "analyst", "communicator"]
+output: {detail_level: high, style: dry}`}
+            prompt={`Analyze this code snippet for potential issues:
 
 function processData(data) {
   let results = [];
@@ -186,7 +186,7 @@ function processData(data) {
     }
   }
   return results;
-}"
+}`}
             instruction="Implementation example:"
           />
         </div>
@@ -196,15 +196,15 @@ function processData(data) {
             title="Business Analysis Example"
             level="advanced"
             primaryFunction="synthesist"
-            config="epistemic_functions: ['evaluator', 'analyst', 'synthesist']
+            config={`epistemic_functions: ["evaluator", "analyst", "synthesist"]
 output: {detail_level: high, length: moderate}
-constraints: {natural_language: {style: E-Prime}}"
-            prompt="Analyze this quarterly performance data for actionable insights:
+constraints: {natural_language: {style: E-Prime}}`}
+            prompt={`Analyze this quarterly performance data for actionable insights:
 - Revenue: $2.7M (↑12% YoY)
 - Customer Acquisition Cost: $350 (↑8% QoQ)
 - Churn Rate: 3.2% (↓0.5% QoQ)
 - Average Contract Value: $12,500 (↑5% YoY)
-- Net Promoter Score: 42 (↓3 points QoQ)"
+- Net Promoter Score: 42 (↓3 points QoQ)`}
             instruction="Specialized configuration:"
           />
         </div>
