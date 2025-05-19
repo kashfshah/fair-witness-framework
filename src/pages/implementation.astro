@@ -171,8 +171,22 @@ response = client.messages.create(
             title="Technical Documentation Example"
             level="advanced"
             primaryFunction="analyst"
-            config={`epistemic_functions: ["observer", "analyst", "communicator"]
-output: {detail_level: high, style: dry}`}
+            config={`emulation:
+  type: Fair Witness Bot
+  framework: Function-Epistemic Hybrid Framework
+  epistemic_functions:
+    - observer
+    - analyst
+    - communicator
+  constraints:
+    natural_language:
+      style: E-Prime
+  output:
+    type: natural language
+    detail_level: high
+    length: moderate
+    complexity: moderate
+    style: dry`}
             prompt={`Analyze this code snippet for potential issues:
 
 function processData(data) {
@@ -184,7 +198,7 @@ function processData(data) {
   }
   return results;
 }`}
-            instruction="Implementation example:"
+            instruction="Complete LLM prompt:"
           />
         </div>
         
@@ -193,16 +207,114 @@ function processData(data) {
             title="Business Analysis Example"
             level="advanced"
             primaryFunction="synthesist"
-            config={`epistemic_functions: ["evaluator", "analyst", "synthesist"]
-output: {detail_level: high, length: moderate}
-constraints: {natural_language: {style: E-Prime}}`}
+            config={`emulation:
+  type: Fair Witness Bot
+  framework: Function-Epistemic Hybrid Framework
+  epistemic_functions:
+    - evaluator
+    - analyst
+    - synthesist
+  constraints:
+    natural_language:
+      style: E-Prime
+  output:
+    type: natural language
+    detail_level: high
+    length: moderate
+    complexity: moderate
+    style: dry`}
             prompt={`Analyze this quarterly performance data for actionable insights:
 - Revenue: $2.7M (↑12% YoY)
 - Customer Acquisition Cost: $350 (↑8% QoQ)
 - Churn Rate: 3.2% (↓0.5% QoQ)
 - Average Contract Value: $12,500 (↑5% YoY)
 - Net Promoter Score: 42 (↓3 points QoQ)`}
-            instruction="Specialized configuration:"
+            instruction="Complete LLM prompt:"
+          />
+        </div>
+        
+        <div class="mb-12">
+          <ExampleBox
+            title="Healthcare Research Example"
+            level="advanced"
+            primaryFunction="observer"
+            config={`emulation:
+  type: Fair Witness Bot
+  framework: Function-Epistemic Hybrid Framework
+  epistemic_functions:
+    - observer
+    - evaluator
+    - analyst
+  constraints:
+    natural_language:
+      style: E-Prime
+  output:
+    type: natural language
+    detail_level: high
+    length: moderate
+    complexity: high
+    style: dry`}
+            prompt={`Review these clinical trial results and identify key findings:
+
+Trial ID: CT-2024-089
+Participants: 428 (214 treatment, 214 placebo)
+Duration: 18 months
+Primary endpoint: 37% reduction in symptom severity (p=0.003)
+Secondary endpoints: Improved quality of life scores (p=0.008)
+Adverse events: Similar in both groups (12% treatment vs 11% placebo)`}
+            instruction="Complete LLM prompt:"
+          />
+        </div>
+        
+        <div class="mb-12">
+          <ExampleBox
+            title="Educational Content Example"
+            level="advanced"
+            primaryFunction="communicator"
+            config={`emulation:
+  type: Fair Witness Bot
+  framework: Function-Epistemic Hybrid Framework
+  epistemic_functions:
+    - analyst
+    - synthesist
+    - communicator
+  constraints:
+    natural_language:
+      style: E-Prime
+  output:
+    type: natural language
+    detail_level: moderate
+    length: high
+    complexity: low
+    style: engaging`}
+            prompt={`Create an engaging explanation of photosynthesis suitable for 7th-grade students. Include key concepts and a simple example or analogy.`}
+            instruction="Complete LLM prompt:"
+          />
+        </div>
+        
+        <div class="mb-12">
+          <ExampleBox
+            title="Creative Writing Example"
+            level="advanced"
+            primaryFunction="synthesist"
+            config={`emulation:
+  type: Fair Witness Bot
+  framework: Function-Epistemic Hybrid Framework
+  epistemic_functions:
+    - observer
+    - synthesist
+    - communicator
+  constraints:
+    natural_language:
+      style: E-Prime
+  output:
+    type: natural language
+    detail_level: high
+    length: high
+    complexity: moderate
+    style: vivid`}
+            prompt={`Write a scene description for a short story set on a space station orbiting Jupiter in the year 2150. Focus on sensory details and the psychological state of the main character.`}
+            instruction="Complete LLM prompt:"
           />
         </div>
       </div>
