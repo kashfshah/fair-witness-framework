@@ -11,6 +11,7 @@
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ClipboardScript from '../components/global/ClipboardScript.astro';
+import ProseContent from '../components/shared/ProseContent.astro';
 ---
 
 <BaseLayout title="Quick Start Guide">
@@ -28,10 +29,12 @@ import ClipboardScript from '../components/global/ClipboardScript.astro';
   <section class="py-12">
     <div class="container">
       <div class="max-w-3xl mx-auto">
-        <div class="prose prose-lg dark:prose-invert mb-8">
+        <div class="mb-8">
+          <ProseContent>
           <p>
             The Function-Epistemic Hybrid Framework works with any LLM that accepts system prompts or configuration instructions. Follow these five steps to begin using it immediately.
           </p>
+          </ProseContent>
         </div>
         
         <!-- Step 1: Choose Your LLM Platform -->

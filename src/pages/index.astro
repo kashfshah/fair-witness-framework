@@ -10,6 +10,7 @@
 
 
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ProseContent from '../components/shared/ProseContent.astro';
 ---
 
 <BaseLayout title="Home">
@@ -38,27 +39,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
         <div class="card">
           <h3 class="text-xl font-display font-medium mb-4 text-primary dark:text-accent1">Observer</h3>
-          <p>Records factual information without interpretation or judgment. Reports verifiable data points and acknowledges information gaps.</p>
+          <ProseContent>
+            <p>Records factual information without interpretation or judgment. Reports verifiable data points and acknowledges information gaps.</p>
+          </ProseContent>
         </div>
         
         <div class="card">
           <h3 class="text-xl font-display font-medium mb-4 text-primary dark:text-accent1">Evaluator</h3>
-          <p>Examines information against established criteria. Applies explicit standards and maintains transparency about evaluation methods.</p>
+          <ProseContent>
+            <p>Examines information against established criteria. Applies explicit standards and maintains transparency about evaluation methods.</p>
+          </ProseContent>
         </div>
         
         <div class="card">
           <h3 class="text-xl font-display font-medium mb-4 text-primary dark:text-accent1">Analyst</h3>
-          <p>Identifies patterns, relationships, and inconsistencies between data points. Maps connections between concepts.</p>
+          <ProseContent>
+            <p>Identifies patterns, relationships, and inconsistencies between data points. Maps connections between concepts.</p>
+          </ProseContent>
         </div>
         
         <div class="card">
           <h3 class="text-xl font-display font-medium mb-4 text-primary dark:text-accent1">Synthesist</h3>
-          <p>Integrates multiple perspectives into coherent models. Combines complementary viewpoints and resolves apparent contradictions.</p>
+          <ProseContent>
+            <p>Integrates multiple perspectives into coherent models. Combines complementary viewpoints and resolves apparent contradictions.</p>
+          </ProseContent>
         </div>
         
         <div class="card">
           <h3 class="text-xl font-display font-medium mb-4 text-primary dark:text-accent1">Communicator</h3>
-          <p>Translates complex findings into accessible language. Adapts complexity to audience needs while maintaining precision.</p>
+          <ProseContent>
+            <p>Translates complex findings into accessible language. Adapts complexity to audience needs while maintaining precision.</p>
+          </ProseContent>
         </div>
       </div>
     </div>
@@ -80,11 +91,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         
         <div>
           <h2 class="text-3xl font-display font-bold mb-6">Application to AI</h2>
-          <p class="mb-4">Contemporary Large Language Models struggle with distinguishing between observation and interpretation, maintaining awareness of knowledge boundaries, and communicating certainty levels appropriately.</p>
-          
-          <p class="mb-4">The Function-Epistemic Framework addresses these challenges through structured epistemological functions, preventing hallucinations and maintaining clear boundaries between fact and interpretation.</p>
-          
-          <p class="mb-6">Through precise configuration, LLMs can produce more reliable, balanced outputs across domains ranging from technical documentation to creative exploration.</p>
+          <ProseContent>
+            <p class="mb-4">Contemporary Large Language Models struggle with distinguishing between observation and interpretation, maintaining awareness of knowledge boundaries, and communicating certainty levels appropriately.</p>
+            
+            <p class="mb-4">The Function-Epistemic Framework addresses these challenges through structured epistemological functions, preventing hallucinations and maintaining clear boundaries between fact and interpretation.</p>
+            
+            <p class="mb-6">Through precise configuration, LLMs can produce more reliable, balanced outputs across domains ranging from technical documentation to creative exploration.</p>
+          </ProseContent>
           
           <a href="/examples" class="btn btn-primary">See Examples</a>
         </div>
@@ -99,19 +112,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="card">
           <h3 class="text-xl font-display font-medium mb-4">YAML Configuration</h3>
-          <p class="mb-4">Simple, structured configuration format to control LLM behavior with precise parameters and constraints.</p>
-          <a href="/yaml-configuration" class="text-accent1 hover:underline">Configuration Guide →</a>
+          <ProseContent>
+            <p class="mb-4">Simple, structured configuration format to control LLM behavior with precise parameters and constraints.</p>
+          </ProseContent>
+          <a href="/implementation" class="text-accent1 hover:underline">Configuration Guide →</a>
         </div>
         
         <div class="card">
           <h3 class="text-xl font-display font-medium mb-4">E-Prime Language</h3>
-          <p class="mb-4">Language pattern that avoids forms of "to be" verbs, encouraging precision and reducing absolutism in statements.</p>
-          <a href="/e-prime" class="text-accent1 hover:underline">E-Prime Explanation →</a>
+          <ProseContent>
+            <p class="mb-4">Language pattern that avoids forms of "to be" verbs, encouraging precision and reducing absolutism in statements.</p>
+          </ProseContent>
+          <a href="/framework" class="text-accent1 hover:underline">E-Prime Explanation →</a>
         </div>
         
         <div class="card">
           <h3 class="text-xl font-display font-medium mb-4">Epistemic Functions</h3>
-          <p class="mb-4">Structured approach to knowledge processing through observer, evaluator, analyst, synthesist, and communicator roles.</p>
+          <ProseContent>
+            <p class="mb-4">Structured approach to knowledge processing through observer, evaluator, analyst, synthesist, and communicator roles.</p>
+          </ProseContent>
           <a href="/framework" class="text-accent1 hover:underline">Framework Details →</a>
         </div>
       </div>

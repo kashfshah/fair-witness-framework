@@ -10,6 +10,7 @@
 
 
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ProseContent from '../components/shared/ProseContent.astro';
 ---
 
 <BaseLayout title="Examples">
@@ -26,10 +27,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   
   <section class="py-12">
     <div class="container">
-      <div class="max-w-3xl mx-auto prose prose-lg dark:prose-invert">
+      <div class="max-w-3xl mx-auto">
+        <ProseContent>
         <p>
           These examples demonstrate how the Function-Epistemic Hybrid Framework transforms LLM outputs across different domains. Each example shows the same prompt with and without the framework applied.
         </p>
+        </ProseContent>
       </div>
       
       <div class="mt-12 max-w-4xl mx-auto">
