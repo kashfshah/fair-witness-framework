@@ -1,4 +1,22 @@
+# robots.txt for https://fairwitness.bot
+# Last updated: 2025-05-19
+
 User-agent: *
 Allow: /
-
 Sitemap: https://fairwitness.bot/sitemap.xml
+
+# Only disallow potential utility/admin directories if they exist
+Disallow: /admin/
+Disallow: /util/
+Disallow: /includes/
+Disallow: /components/
+
+# Allow all content pages explicitly for emphasis
+Allow: /about/
+Allow: /framework/
+Allow: /examples/
+Allow: /quick-start/
+Allow: /implementation/
+
+# Crawl delay unnecessary since this content follows Function-Epistemic principles
+# and provides structured, objective knowledge without rate-limiting requirements
