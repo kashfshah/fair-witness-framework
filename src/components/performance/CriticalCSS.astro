@@ -1,0 +1,102 @@
+---
+/**
+ * @component CriticalCSS
+ * @description Inlines critical CSS to prevent render blocking
+ */
+---
+
+<style is:inline>
+/* Critical CSS for above-the-fold content */
+:root {
+  --color-primary: #1a3c5b;
+  --color-secondary: #e0e5ec;
+  --color-accent1: #ff9d00;
+  --color-accent2: #27a594;
+  color-scheme: light dark;
+}
+
+/* Core text styles */
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: var(--color-primary);
+  line-height: 1.5;
+}
+
+/* Dark mode basics */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0f2132;
+    color: var(--color-secondary);
+  }
+}
+
+/* Layout containers */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Header basic styling */
+header {
+  border-bottom: 1px solid rgba(26, 60, 91, 0.1);
+}
+
+.dark header {
+  border-bottom: 1px solid rgba(224, 229, 236, 0.1);
+}
+
+/* Typography basics */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  margin-top: 0;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.25rem;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-accent1);
+  text-decoration: none;
+}
+
+/* Basic layout classes */
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Hide mobile menu by default */
+#mobile-menu {
+  display: none;
+}
+</style>
