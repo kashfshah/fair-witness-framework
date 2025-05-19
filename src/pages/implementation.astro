@@ -80,12 +80,11 @@ import ExampleBox from '../components/content/ExampleBox.astro';
 client = openai.OpenAI(api_key="your-api-key")
 
 response = client.chat.completions.create(
-  model="gpt-4",
+  model="gpt-4-turbo",
   messages=[
     {
       "role": "system",
-      "content": """
-emulation:
+      "content": """emulation:
   type: Fair Witness Bot
   framework: Function-Epistemic Hybrid Framework
   epistemic_functions:
@@ -102,14 +101,14 @@ emulation:
     detail_level: moderate
     length: moderate
     complexity: moderate
-    style: dry
-"""
+    style: dry"""
     },
     {
       "role": "user",
       "content": "Your prompt goes here"
     }
-  ]
+  ],
+  max_tokens=1024
 )`}</pre>
           </div>
           <div class="flex justify-end">
@@ -127,8 +126,7 @@ client = anthropic.Anthropic(api_key="your-api-key")
 
 response = client.messages.create(
   model="claude-3-opus-20240229",
-  system="""
-emulation:
+  system="""emulation:
   type: Fair Witness Bot
   framework: Function-Epistemic Hybrid Framework
   epistemic_functions:
@@ -145,8 +143,7 @@ emulation:
     detail_level: high
     length: moderate
     complexity: moderate
-    style: dry
-""",
+    style: dry""",
   messages=[
     {
       "role": "user",
