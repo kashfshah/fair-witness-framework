@@ -95,8 +95,25 @@ a {
   border-width: 0;
 }
 
-/* Hide mobile menu by default */
+/* Mobile menu styles */
 #mobile-menu {
   display: none;
+}
+
+/* Mobile menu bars */
+.mobile-menu-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin-bottom: 5px;
+  position: relative;
+  transition: transform 200ms ease-in-out, opacity 200ms ease-in-out;
+}
+
+/* When JavaScript fails, allow hover to work as fallback */
+@media (hover: hover) {
+  #mobile-menu-toggle:hover .mobile-menu-bar {
+    background-color: var(--color-accent1);
+  }
 }
 </style>

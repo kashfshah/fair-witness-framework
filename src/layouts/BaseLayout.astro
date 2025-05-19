@@ -136,10 +136,11 @@ const siteName = "Fair Witness Bot";
         <!-- Mobile Menu Button -->
         <button 
           id="mobile-menu-toggle" 
-          class="md:hidden flex flex-col justify-center items-center w-8 h-8"
+          class="md:hidden flex flex-col justify-center items-center w-8 h-8 focus:outline-none focus:ring-2 focus:ring-accent1 focus:ring-opacity-50 rounded"
           aria-expanded="false"
           aria-label="Toggle navigation menu"
           aria-controls="mobile-menu"
+          data-menu-toggle
         >
           <span class="block w-6 h-0.5 bg-primary dark:bg-secondary mb-1.5 transition-transform mobile-menu-bar"></span>
           <span class="block w-6 h-0.5 bg-primary dark:bg-secondary mb-1.5 transition-opacity mobile-menu-bar"></span>
@@ -229,10 +230,10 @@ const siteName = "Fair Witness Bot";
     <!-- Announce screen reader messages -->
     <div id="sr-announcements" class="sr-only" aria-live="polite" aria-atomic="true"></div>
     
+    <!-- Mobile menu functionality with high priority -->    
+    <MobileMenuScript />
+    
     <!-- Deferred non-critical scripts -->    
     <DeferredScripts />
-    
-    <!-- Mobile menu functionality -->    
-    <MobileMenuScript />
   </body>
 </html>

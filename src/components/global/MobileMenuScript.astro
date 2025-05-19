@@ -17,12 +17,21 @@
  */
 ---
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
+<script is:inline>
+  // Execute immediately to ensure mobile menu functionality
+  (function() {
+    // Get elements with defensive coding
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuBars = document.querySelectorAll('.mobile-menu-bar');
     const srAnnouncer = document.getElementById('sr-announcements');
+    
+    // Debug logging to help troubleshoot mobile issues
+    console.log('Mobile menu initialized:', {
+      toggleExists: !!mobileMenuToggle,
+      menuExists: !!mobileMenu,
+      menuBarsCount: menuBars.length
+    });
     
     if (mobileMenuToggle && mobileMenu) {
       let menuOpen = false;
@@ -30,12 +39,21 @@
       const toggleMenu = () => {
         menuOpen = !menuOpen;
         
-        // Toggle menu visibility
-        mobileMenu.classList.toggle('hidden', !menuOpen);
+        // Toggle menu visibility - use a more direct approach for reliability
+        if (menuOpen) {
+          mobileMenu.classList.remove('hidden');
+          mobileMenu.style.display = 'block';
+        } else {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.style.display = 'none';
+        }
+        
+        // Ensure body scroll behavior is managed appropriately
+        document.body.style.overflow = menuOpen ? 'hidden' : '';
         
         // Update ARIA attributes for accessibility
-        mobileMenuToggle.setAttribute('aria-expanded', menuOpen);
-        mobileMenu.setAttribute('aria-hidden', !menuOpen);
+        mobileMenuToggle.setAttribute('aria-expanded', menuOpen.toString());
+        mobileMenu.setAttribute('aria-hidden', (!menuOpen).toString());
         
         // Announce menu state to screen readers
         if (srAnnouncer) {
@@ -112,5 +130,5 @@
         }
       });
     }
-  });
+  })();
 </script>
