@@ -10,6 +10,7 @@
 
 import '../styles/global.css';
 import MobileMenuScript from '../components/global/MobileMenuScript.astro';
+import ContrastModeToggle from '../components/global/ContrastModeToggle.astro';
 
 interface Props {
   title: string;
@@ -38,7 +39,7 @@ const siteName = "Fair Witness Bot";
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -106,16 +107,21 @@ const siteName = "Fair Witness Bot";
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   </head>
-  <body>
-    <header class="border-b border-primary/10 dark:border-secondary/10">
+  <body class="antialiased">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-accent1 focus:text-white focus:outline-none focus:rounded">Skip to main content</a>
+    
+    <!-- Accessibility: High Contrast Mode Toggle -->
+    <ContrastModeToggle />
+    
+    <header class="border-b border-primary/10 dark:border-secondary/10" role="banner">
       <div class="container py-4 flex justify-between items-center">
         <div class="flex items-center gap-2">
           <a href="/" class="font-display text-2xl font-bold">Fair Witness Bot</a>
         </div>
         
         <!-- Desktop Navigation -->
-        <nav class="hidden md:block">
-          <ul class="flex gap-6">
+        <nav class="hidden md:block" aria-label="Main navigation">
+          <ul class="flex gap-6" role="list">
             <li><a href="/quick-start" class="hover:text-accent1 font-medium">Quick Start</a></li>
             <li><a href="/framework" class="hover:text-accent1">Framework</a></li>
             <li><a href="/implementation" class="hover:text-accent1">Implementation</a></li>
@@ -125,7 +131,13 @@ const siteName = "Fair Witness Bot";
         </nav>
         
         <!-- Mobile Menu Button -->
-        <button id="mobile-menu-toggle" class="md:hidden flex flex-col justify-center items-center w-8 h-8">
+        <button 
+          id="mobile-menu-toggle" 
+          class="md:hidden flex flex-col justify-center items-center w-8 h-8"
+          aria-expanded="false"
+          aria-label="Toggle navigation menu"
+          aria-controls="mobile-menu"
+        >
           <span class="block w-6 h-0.5 bg-primary dark:bg-secondary mb-1.5 transition-transform mobile-menu-bar"></span>
           <span class="block w-6 h-0.5 bg-primary dark:bg-secondary mb-1.5 transition-opacity mobile-menu-bar"></span>
           <span class="block w-6 h-0.5 bg-primary dark:bg-secondary transition-transform mobile-menu-bar"></span>
@@ -133,10 +145,10 @@ const siteName = "Fair Witness Bot";
       </div>
       
       <!-- Mobile Navigation -->
-      <div id="mobile-menu" class="md:hidden hidden py-4 border-t border-primary/10 dark:border-secondary/10">
+      <div id="mobile-menu" class="md:hidden hidden py-4 border-t border-primary/10 dark:border-secondary/10" aria-hidden="true">
         <div class="container">
-          <nav>
-            <ul class="flex flex-col gap-4">
+          <nav aria-label="Mobile navigation">
+            <ul class="flex flex-col gap-4" role="list">
               <li><a href="/quick-start" class="block py-2 hover:text-accent1 font-medium">Quick Start</a></li>
               <li><a href="/framework" class="block py-2 hover:text-accent1">Framework</a></li>
               <li><a href="/implementation" class="block py-2 hover:text-accent1">Implementation</a></li>
@@ -147,10 +159,10 @@ const siteName = "Fair Witness Bot";
         </div>
       </div>
     </header>
-    <main>
+    <main id="main-content" tabindex="-1">
       <slot />
     </main>
-    <footer class="mt-12 py-10 border-t border-primary/10 dark:border-secondary/10 bg-secondary/5 dark:bg-primary/5">
+    <footer class="mt-12 py-10 border-t border-primary/10 dark:border-secondary/10 bg-secondary/5 dark:bg-primary/5" role="contentinfo">
       <div class="container">
         <!-- Main Footer Content -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -211,10 +223,24 @@ const siteName = "Fair Witness Bot";
       </svg>
     </button>
     
+    <!-- Announce screen reader messages -->
+    <div id="sr-announcements" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    
     <script>
       // Jump to top functionality with progressive enhancement
       document.addEventListener('DOMContentLoaded', function() {
         const jumpToTopBtn = document.getElementById('jump-to-top');
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        // Update mobile menu ARIA attributes when toggled
+        if (mobileMenuToggle && mobileMenu) {
+          mobileMenuToggle.addEventListener('click', function() {
+            const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+            mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.setAttribute('aria-hidden', isExpanded);
+          });
+        }
         
         // Only initialize if button exists (defensive coding)
         if (!jumpToTopBtn) return;
@@ -249,6 +275,12 @@ const siteName = "Fair Witness Bot";
             top: 0,
             behavior: 'smooth'
           });
+          
+          // Announce action to screen readers
+          const announcer = document.getElementById('sr-announcements');
+          if (announcer) {
+            announcer.textContent = 'Scrolled to top of page';
+          }
         });
         
         // Support keyboard navigation - allow Enter key to trigger button

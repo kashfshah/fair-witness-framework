@@ -1,0 +1,115 @@
+---
+/**
+ * @license
+ * Fair Witness Bot Framework
+ * Copyright (c) 2025 Fair Witness Bot
+ * This source code contains material licensed under the Creative Commons
+ * Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+ * https://creativecommons.org/licenses/by-sa/4.0/
+ */
+
+/**
+ * ContrastModeToggle Component
+ * 
+ * Provides a high-contrast mode toggle for enhanced accessibility
+ * Following WCAG 2.1 AA standards for visibility and interaction
+ */
+---
+
+<div class="fixed z-40 top-4 right-4">
+  <button 
+    id="contrast-toggle" 
+    type="button" 
+    class="flex items-center justify-center p-2 rounded-full bg-white dark:bg-primary/80 shadow-md focus:outline-none focus:ring-2 focus:ring-accent1" 
+    aria-label="Toggle high contrast mode" 
+    aria-pressed="false"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary dark:text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>
+  </button>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const contrastToggle = document.getElementById('contrast-toggle');
+    const htmlElement = document.documentElement;
+    const srAnnouncer = document.getElementById('sr-announcements');
+    
+    // Check for saved preference
+    const highContrastEnabled = localStorage.getItem('high-contrast') === 'true';
+    
+    // Apply initial state
+    if (highContrastEnabled) {
+      htmlElement.classList.add('high-contrast');
+      contrastToggle.setAttribute('aria-pressed', 'true');
+    }
+    
+    // Toggle function
+    function toggleHighContrast() {
+      const isHighContrast = htmlElement.classList.toggle('high-contrast');
+      
+      // Save preference
+      localStorage.setItem('high-contrast', isHighContrast);
+      
+      // Update ARIA state
+      contrastToggle.setAttribute('aria-pressed', isHighContrast);
+      
+      // Announce to screen readers
+      if (srAnnouncer) {
+        srAnnouncer.textContent = isHighContrast 
+          ? 'High contrast mode enabled' 
+          : 'High contrast mode disabled';
+      }
+    }
+    
+    // Add click event
+    contrastToggle.addEventListener('click', toggleHighContrast);
+    
+    // Add keyboard support
+    contrastToggle.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleHighContrast();
+      }
+    });
+  });
+</script>
+
+<style is:global>
+  /* High contrast mode styles */
+  .high-contrast {
+    --color-primary: #000000;
+    --color-secondary: #ffffff;
+    --color-accent1: #0000ff;
+    --color-accent2: #ff0000;
+  }
+  
+  .high-contrast body {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+  }
+  
+  .high-contrast a {
+    color: var(--color-accent1);
+    text-decoration: underline;
+  }
+  
+  .high-contrast button {
+    border: 2px solid var(--color-primary);
+  }
+  
+  .high-contrast .card,
+  .high-contrast .btn {
+    border: 2px solid var(--color-primary);
+  }
+  
+  .high-contrast #contrast-toggle {
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-secondary);
+  }
+  
+  .high-contrast #contrast-toggle svg {
+    color: var(--color-secondary);
+  }
+</style>
