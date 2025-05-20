@@ -14,6 +14,37 @@ import ProseContent from '../components/shared/ProseContent.astro';
 ---
 
 <BaseLayout title="Home">
+  <script>
+    // Wait for the DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      const copyBtn = document.getElementById('copy-yaml-btn');
+      const yamlConfig = document.getElementById('yaml-config');
+      
+      if (copyBtn && yamlConfig) {
+        copyBtn.addEventListener('click', () => {
+          // Get the text content from the YAML configuration
+          const configText = yamlConfig.textContent;
+          
+          // Use the clipboard API to copy the text
+          navigator.clipboard.writeText(configText)
+            .then(() => {
+              // Visual feedback that copy was successful
+              const originalText = copyBtn.innerHTML;
+              copyBtn.innerHTML = '<span>Copied!</span>';
+              
+              // Restore original button text after 2 seconds
+              setTimeout(() => {
+                copyBtn.innerHTML = originalText;
+              }, 2000);
+            })
+            .catch(err => {
+              console.error('Failed to copy text: ', err);
+              alert('Failed to copy text to clipboard');
+            });
+        });
+      }
+    });
+  </script>
   <section class="py-20 bg-gradient-to-b from-secondary to-white dark:from-primary dark:to-primary/80">
     <div class="container">
       <div class="max-w-3xl mx-auto text-center">
@@ -47,8 +78,15 @@ import ProseContent from '../components/shared/ProseContent.astro';
               <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
               <div class="w-3 h-3 rounded-full bg-green-500"></div>
             </div>
-            <div class="bg-slate-900 text-slate-100 p-6 rounded-xl shadow-lg font-mono text-sm overflow-auto max-h-[500px]">
-              <pre class="whitespace-pre"><code>emulation:
+            <div class="bg-slate-900 text-slate-100 p-6 pt-8 rounded-xl shadow-lg font-mono text-sm overflow-auto max-h-[500px] relative">
+              <button id="copy-yaml-btn" class="absolute top-2 right-2 bg-accent1 hover:bg-accent1/80 text-white text-xs px-2 py-1 rounded flex items-center gap-1 transition-all" aria-label="Copy to clipboard">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
+                  <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z" />
+                </svg>
+                <span>Copy</span>
+              </button>
+              <pre id="yaml-config" class="whitespace-pre"><code>emulation:
   type: Fair Witness Bot
   framework: Function-Epistemic Hybrid Framework
   epistemic_functions:
