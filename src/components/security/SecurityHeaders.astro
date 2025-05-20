@@ -2,6 +2,13 @@
 /**
  * @component SecurityHeaders
  * @description Implements comprehensive security headers to protect against common web vulnerabilities
+ * 
+ * Security implementation notes:
+ * - CSP directives use a hash-based approach for inline scripts and styles
+ * - The 'unsafe-inline' directive in this component serves as a fallback
+ * - During build, a script generates SHA-256 hashes of all inline scripts and styles
+ * - Hashes replace 'unsafe-inline' in the _headers file for production
+ * 
  * @license
  * Fair Witness Bot Framework
  * Copyright (c) 2025 Fair Witness Bot
@@ -12,6 +19,7 @@
 ---
 
 <!-- Content Security Policy -->
+<!-- Note: 'unsafe-inline' will be replaced with specific hashes during build process -->
 <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
   script-src 'self' 'unsafe-inline'; 
