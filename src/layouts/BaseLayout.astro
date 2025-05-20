@@ -16,6 +16,7 @@ import MobileMenuScript from '../components/global/MobileMenuScript.astro';
 import CriticalCSS from '../components/performance/CriticalCSS.astro';
 import OptimizedFonts from '../components/performance/OptimizedFonts.astro';
 import DeferredScripts from '../components/performance/DeferredScripts.astro';
+import SecurityHeaders from '../components/security/SecurityHeaders.astro';
 
 interface Props {
   title: string;
@@ -48,6 +49,9 @@ const siteName = "Fair Witness Bot";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Security Headers -->
+    <SecurityHeaders />
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

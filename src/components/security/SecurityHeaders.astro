@@ -1,0 +1,46 @@
+---
+/**
+ * @component SecurityHeaders
+ * @description Implements comprehensive security headers to protect against common web vulnerabilities
+ * @license
+ * Fair Witness Bot Framework
+ * Copyright (c) 2025 Fair Witness Bot
+ * This source code contains material licensed under the Creative Commons
+ * Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+ * https://creativecommons.org/licenses/by-sa/4.0/
+ */
+---
+
+<!-- Content Security Policy -->
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' 'unsafe-inline'; 
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com;
+  img-src 'self' data:;
+  connect-src 'self';
+  frame-src 'none';
+  object-src 'none';
+  base-uri 'self';
+  form-action 'self';
+  frame-ancestors 'none';
+  upgrade-insecure-requests;
+">
+
+<!-- Prevent MIME type sniffing -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+<!-- Prevent iframe embedding -->
+<meta http-equiv="X-Frame-Options" content="DENY">
+
+<!-- Control referrer information -->
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+<!-- Limit browser features -->
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=()">
+
+<!-- HTTP Strict Transport Security (HSTS) -->
+<meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+
+<!-- Prevent XSS attacks -->
+<meta http-equiv="X-XSS-Protection" content="1; mode=block">

@@ -1,0 +1,37 @@
+# Cloudflare Pages _headers file
+# Global headers applied to all pages
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# Cache settings for static assets - longer cache duration
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache settings for images
+/*.svg
+  Cache-Control: public, max-age=86400, must-revalidate
+/*.png
+  Cache-Control: public, max-age=86400, must-revalidate
+/*.jpg
+  Cache-Control: public, max-age=86400, must-revalidate
+/*.webp
+  Cache-Control: public, max-age=86400, must-revalidate
+/*.ico
+  Cache-Control: public, max-age=86400, must-revalidate
+
+# CSS and JavaScript caching
+/*.css
+  Cache-Control: public, max-age=86400, must-revalidate
+/*.js
+  Cache-Control: public, max-age=86400, must-revalidate
+
+# No caching for HTML documents - always serve fresh content
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
