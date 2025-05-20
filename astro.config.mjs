@@ -9,6 +9,11 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
+  vite: {
+    build: {
+      sourcemap: process.env.NODE_ENV === "production" ? false : true
+    }
+  },
   site: 'https://fairwitness.bot',
   integrations: [tailwind()],
   output: 'static',
