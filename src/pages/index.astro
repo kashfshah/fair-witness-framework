@@ -31,6 +31,67 @@ import ProseContent from '../components/shared/ProseContent.astro';
       </div>
     </div>
   </section>
+
+  <section class="py-12 bg-slate-50 dark:bg-slate-900/50">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-display font-bold">Core Configuration</h2>
+          <p class="text-lg text-primary/70 dark:text-secondary/70 mt-2">The powerful YAML configuration that drives the Framework</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+          <div class="lg:col-span-3 relative">
+            <div class="absolute top-3 right-3 flex gap-2">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <div class="bg-slate-900 text-slate-100 p-6 rounded-xl shadow-lg font-mono text-sm overflow-auto max-h-[500px]">
+              <pre class="whitespace-pre"><code>emulation:
+  type: Fair Witness Bot
+  framework: Function-Epistemic Hybrid Framework
+  epistemic_functions:
+    - observer
+    - evaluator
+    - analyst
+    - synthesist
+    - communicator
+  constraints:
+    rfc: 2119
+    reasoning_language: yaml
+    documentation_language: markdown
+    natural_language:
+      style: E-Prime</code></pre>
+            </div>
+          </div>
+          
+          <div class="lg:col-span-2 flex flex-col justify-center">
+            <div class="space-y-4">
+              <div class="bg-white dark:bg-slate-800 p-5 rounded-lg shadow-md">
+                <h3 class="text-lg font-display font-semibold text-accent1 mb-2">Epistemic Functions</h3>
+                <p class="text-sm">Five distinct knowledge processing roles that work together to produce balanced outputs</p>
+              </div>
+              
+              <div class="bg-white dark:bg-slate-800 p-5 rounded-lg shadow-md">
+                <h3 class="text-lg font-display font-semibold text-accent1 mb-2">E-Prime Language</h3>
+                <p class="text-sm">Precise communication style that avoids forms of "to be" verbs, reducing absolutism</p>
+              </div>
+              
+              <div class="bg-white dark:bg-slate-800 p-5 rounded-lg shadow-md">
+                <h3 class="text-lg font-display font-semibold text-accent1 mb-2">RFC 2119 Standards</h3>
+                <p class="text-sm">Clearly defined terminology for distinguishing between requirements levels</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-8">
+          <a href="/implementation" class="btn btn-primary">Full Configuration Guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
   
   <section class="py-16">
     <div class="container">
