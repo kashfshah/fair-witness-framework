@@ -7,9 +7,11 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build && node scripts/generate-csp-hashes.js",
-    "postbuild": "node scripts/update-headers.js",
+    "postbuild": "node scripts/update-headers.js && node scripts/enhanced-security.js",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "security-audit": "npm audit --production",
+    "security-enhance": "node scripts/enhanced-security.js"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.0.0",
@@ -19,6 +21,6 @@
   },
   "devDependencies": {
     "glob": "^10.3.10",
-    "jsdom": "^23.0.1"
+    "jsdom": "^23.2.0"
   }
 }
