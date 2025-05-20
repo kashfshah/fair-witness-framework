@@ -33,22 +33,39 @@ function enhanceCSP() {
     );
   }
   
-  // Add additional CSP protections
-  const additionalProtections = [
-    "form-action 'self';",
-    "frame-ancestors 'self';",
-    "base-uri 'self';",
-    "object-src 'none';",
-    "require-trusted-types-for 'script';"
-  ];
+  // Extract the existing CSP header
+  const cspRegex = /Content-Security-Policy:\s*([^\n]+)/;
+  const match = headers.match(cspRegex);
   
-  for (const protection of additionalProtections) {
-    if (!headers.includes(protection)) {
-      headers = headers.replace(
-        /Content-Security-Policy:/,
-        `Content-Security-Policy: ${protection}`
-      );
+  if (match) {
+    let cspValue = match[1];
+    
+    // Add additional CSP protections if they don't already exist
+    const additionalProtections = {
+      "form-action": "'self'", 
+      "frame-ancestors": "'self'", 
+      "base-uri": "'self'",
+      "object-src": "'none'",
+      "require-trusted-types-for": "'script'"
+    };
+    
+    // Check if trusted-types directive exists, add if not
+    if (!cspValue.includes('trusted-types')) {
+      cspValue = `trusted-types 'none'; ${cspValue}`;
     }
+    
+    // Add each protection directive if it doesn't exist
+    for (const [directive, value] of Object.entries(additionalProtections)) {
+      if (!cspValue.includes(`${directive} `)) {
+        cspValue = `${directive} ${value}; ${cspValue}`;
+      }
+    }
+    
+    // Replace the entire CSP header with the updated value
+    headers = headers.replace(
+      cspRegex,
+      `Content-Security-Policy: ${cspValue}`
+    );
   }
   
   fs.writeFileSync(headersPath, headers);
