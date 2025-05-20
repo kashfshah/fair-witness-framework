@@ -1,0 +1,84 @@
+---
+/**
+ * @license
+ * Fair Witness Bot Framework
+ * Copyright (c) 2025 Fair Witness Bot
+ * This source code contains material licensed under the Creative Commons
+ * Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+ * https://creativecommons.org/licenses/by-sa/4.0/
+ */
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProseContent from '../components/shared/ProseContent.astro';
+---
+
+<BaseLayout title="Security Hall of Fame">
+  <section class="py-16 bg-gradient-to-b from-secondary to-white dark:from-primary dark:to-primary/80">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl font-display font-bold mb-6">Security Hall of Fame</h1>
+        <p class="text-xl mb-4 text-primary/80 dark:text-secondary/80">
+          Recognizing security researchers who have contributed to the safety of the Fair Witness Framework
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-12">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <ProseContent>
+          <h2>Security Researcher Acknowledgments</h2>
+          
+          <p>
+            We extend our gratitude to the following security researchers who have responsibly disclosed vulnerabilities, helping us improve the security of the Fair Witness Framework project.
+          </p>
+          
+          <div class="my-8">
+            <h3>2025</h3>
+            <ul class="list-disc pl-6">
+              <li>This list will be updated as vulnerabilities are reported and fixed</li>
+            </ul>
+          </div>
+          
+          <h3>Recognition Criteria</h3>
+          
+          <p>
+            Security researchers included in this Hall of Fame have:
+          </p>
+          
+          <ul>
+            <li>Discovered and reported genuine security vulnerabilities</li>
+            <li>Followed our responsible disclosure process</li>
+            <li>Provided clear documentation to help us understand and address the issue</li>
+            <li>Respected the privacy and security of our users throughout the disclosure process</li>
+          </ul>
+          
+          <h3>Reporting a Vulnerability</h3>
+          
+          <p>
+            If you have discovered a security vulnerability, we encourage you to report it following our <a href="/security-policy">Security Policy</a>. We appreciate the valuable work security researchers perform in improving the security of our project.
+          </p>
+          
+          <p>
+            For more information about our security practices and policies, please refer to our <a href="/docs/SECURITY.md">Security Documentation</a>.
+          </p>
+          
+          <div class="mt-8 p-6 bg-secondary/20 dark:bg-primary/20 rounded-lg">
+            <h3 class="text-xl font-display font-medium mb-4">Function-Epistemic Security Approach</h3>
+            <p>
+              The Fair Witness Framework applies structured security analysis through multiple epistemic functions:
+            </p>
+            <ul class="mt-4">
+              <li class="mb-2"><strong>Observer function:</strong> Documenting facts without interpretation</li>
+              <li class="mb-2"><strong>Evaluator function:</strong> Applying standard security criteria</li>
+              <li class="mb-2"><strong>Analyst function:</strong> Identifying patterns in vulnerability reports</li>
+              <li class="mb-2"><strong>Synthesist function:</strong> Combining diverse security perspectives</li>
+              <li class="mb-2"><strong>Communicator function:</strong> Translating findings into clear actions</li>
+            </ul>
+          </div>
+        </ProseContent>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

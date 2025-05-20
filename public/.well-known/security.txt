@@ -1,0 +1,31 @@
+# Security.txt for Fair Witness Framework
+# RFC 9116 compliant - https://securitytxt.org/
+# Last updated: 2025-05-19
+
+# Contact information
+Contact: mailto:security@fairwitness.bot
+Contact: https://fairwitness.bot/security-contact
+
+# Expiration date (1 year from creation)
+Expires: 2026-05-19T23:00:00.000Z
+
+# Preferred languages for security reports
+Preferred-Languages: en
+
+# Encryption key for secure communication
+Encryption: https://fairwitness.bot/pgp-key.asc
+
+# Security policy location 
+Policy: https://fairwitness.bot/security-policy
+
+# Acknowledgments page
+Acknowledgments: https://fairwitness.bot/security-hall-of-fame
+
+# Canonical URI
+Canonical: https://fairwitness.bot/.well-known/security.txt
+
+# Hiring information
+Hiring: https://fairwitness.bot/careers
+
+# Digital signature
+# Note: This should be signed with PGP for verification in production

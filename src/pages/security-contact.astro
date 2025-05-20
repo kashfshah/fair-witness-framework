@@ -1,0 +1,128 @@
+---
+/**
+ * @license
+ * Fair Witness Bot Framework
+ * Copyright (c) 2025 Fair Witness Bot
+ * This source code contains material licensed under the Creative Commons
+ * Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+ * https://creativecommons.org/licenses/by-sa/4.0/
+ */
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProseContent from '../components/shared/ProseContent.astro';
+---
+
+<BaseLayout title="Security Contact">
+  <section class="py-16 bg-gradient-to-b from-secondary to-white dark:from-primary dark:to-primary/80">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl font-display font-bold mb-6">Security Contact</h1>
+        <p class="text-xl mb-4 text-primary/80 dark:text-secondary/80">
+          Report security vulnerabilities in the Fair Witness Framework
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-12">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <ProseContent>
+          <h2>Reporting Security Vulnerabilities</h2>
+          
+          <p>
+            The security of the Fair Witness Framework constitutes a priority for our team. We appreciate your assistance in identifying and responsibly disclosing potential security issues.
+          </p>
+          
+          <div class="my-8 p-6 bg-accent1/10 rounded-lg">
+            <h3 class="text-xl font-display font-medium mb-4">Contact Information</h3>
+            <p class="mb-3">To report a security vulnerability, please use one of the following methods:</p>
+            <ul>
+              <li class="mb-2">Email: <a href="mailto:security@fairwitness.bot">security@fairwitness.bot</a></li>
+              <li class="mb-2">For encrypted communication: Use our <a href="/pgp-key.asc">PGP public key</a></li>
+            </ul>
+          </div>
+          
+          <h3>What to Include in Your Report</h3>
+          
+          <p>To help us understand and address the issue effectively, please include:</p>
+          
+          <ul>
+            <li>A clear description of the vulnerability</li>
+            <li>Steps to reproduce the issue</li>
+            <li>The potential impact of the vulnerability</li>
+            <li>Any recommendations for mitigation</li>
+            <li>Your contact information (if you wish to be acknowledged)</li>
+          </ul>
+          
+          <h3>Our Response Process</h3>
+          
+          <p>After receiving your report, our team will:</p>
+          
+          <ol>
+            <li>Acknowledge receipt within 48 hours</li>
+            <li>Evaluate the reported vulnerability</li>
+            <li>Prioritize and address verified issues</li>
+            <li>Keep you informed throughout the resolution process</li>
+            <li>Recognize your contribution (with your permission)</li>
+          </ol>
+          
+          <h3>Coordinated Disclosure</h3>
+          
+          <p>
+            We follow a coordinated disclosure approach. We request that you allow us sufficient time to investigate and address the vulnerability before disclosing it publicly.
+          </p>
+          
+          <div class="mt-8 p-6 bg-secondary/20 dark:bg-primary/20 rounded-lg">
+            <h3 class="text-xl font-display font-medium mb-4">Security Documentation</h3>
+            <p>
+              For more information about our security policies and practices, please refer to:
+            </p>
+            <ul class="mt-4">
+              <li class="mb-2"><a href="/security-policy">Security Policy</a> - Our comprehensive vulnerability disclosure policy</li>
+              <li class="mb-2"><a href="/security-hall-of-fame">Security Hall of Fame</a> - Recognition of past contributors</li>
+              <li class="mb-2"><a href="/.well-known/security.txt">security.txt</a> - Our RFC 9116 compliant security contact information</li>
+            </ul>
+          </div>
+          
+          <h3>Function-Epistemic Security Process</h3>
+          
+          <p>
+            When processing security reports, our team applies the Function-Epistemic Framework to ensure objective, structured, and comprehensive analysis:
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <div class="p-4 bg-white/50 dark:bg-primary/50 rounded-lg">
+              <h4 class="font-display font-medium mb-2">Observer Function</h4>
+              <p>We document reported vulnerabilities factually without premature interpretation</p>
+            </div>
+            
+            <div class="p-4 bg-white/50 dark:bg-primary/50 rounded-lg">
+              <h4 class="font-display font-medium mb-2">Evaluator Function</h4>
+              <p>We assess vulnerabilities against established security standards and criteria</p>
+            </div>
+            
+            <div class="p-4 bg-white/50 dark:bg-primary/50 rounded-lg">
+              <h4 class="font-display font-medium mb-2">Analyst Function</h4>
+              <p>We identify patterns, relationships, and root causes of security issues</p>
+            </div>
+            
+            <div class="p-4 bg-white/50 dark:bg-primary/50 rounded-lg">
+              <h4 class="font-display font-medium mb-2">Synthesist Function</h4>
+              <p>We integrate multiple security perspectives to develop comprehensive solutions</p>
+            </div>
+            
+            <div class="md:col-span-2 p-4 bg-white/50 dark:bg-primary/50 rounded-lg">
+              <h4 class="font-display font-medium mb-2">Communicator Function</h4>
+              <p>We translate technical findings into clear, structured responses and remediation plans</p>
+            </div>
+          </div>
+          
+          <p class="mt-8">
+            We appreciate your commitment to security and thank you for helping to improve the Fair Witness Framework.
+          </p>
+        </ProseContent>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

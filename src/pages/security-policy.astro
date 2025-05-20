@@ -1,0 +1,123 @@
+---
+/**
+ * @license
+ * Fair Witness Bot Framework
+ * Copyright (c) 2025 Fair Witness Bot
+ * This source code contains material licensed under the Creative Commons
+ * Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+ * https://creativecommons.org/licenses/by-sa/4.0/
+ */
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProseContent from '../components/shared/ProseContent.astro';
+---
+
+<BaseLayout title="Security Policy">
+  <section class="py-16 bg-gradient-to-b from-secondary to-white dark:from-primary dark:to-primary/80">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl font-display font-bold mb-6">Security Policy</h1>
+        <p class="text-xl mb-4 text-primary/80 dark:text-secondary/80">
+          Responsible disclosure guidelines for the Fair Witness Framework
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-12">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <ProseContent>
+          <h2>Vulnerability Disclosure Policy</h2>
+          
+          <p>
+            The Fair Witness Framework team takes security seriously. We appreciate the work of security researchers in improving the security of our project. This policy provides guidelines for reporting vulnerabilities and confirms that we will not pursue legal action against security researchers who report vulnerabilities responsibly.
+          </p>
+          
+          <h3>Scope</h3>
+          
+          <p>This policy applies to the official Fair Witness Framework website at fairwitness.bot and all associated subdomains.</p>
+          
+          <h3>Reporting a Vulnerability</h3>
+          
+          <p>If you believe you have found a security vulnerability, please send a detailed report to <a href="mailto:security@fairwitness.bot">security@fairwitness.bot</a>. For encrypted communication, use our <a href="/pgp-key.asc">PGP key</a>.</p>
+          
+          <p>Your report should include:</p>
+          
+          <ul>
+            <li>A description of the vulnerability</li>
+            <li>Steps to reproduce the issue</li>
+            <li>Potential impact of the vulnerability</li>
+            <li>Any suggestions for mitigating the issue</li>
+          </ul>
+          
+          <h3>Response Process</h3>
+          
+          <p>When you submit a vulnerability report, you can expect the following response process:</p>
+          
+          <ol>
+            <li>Initial acknowledgment within 48 hours</li>
+            <li>Assessment and verification of the reported issue</li>
+            <li>Regular updates (at least weekly) about the progress toward resolution</li>
+            <li>Notification when the vulnerability has been addressed</li>
+          </ol>
+          
+          <h3>Disclosure Policy</h3>
+          
+          <p>
+            We follow the principle of coordinated vulnerability disclosure:
+          </p>
+          
+          <ul>
+            <li>Please allow us reasonable time to address the vulnerability before publicly disclosing it</li>
+            <li>We aim to address and deploy fixes for verified vulnerabilities within 90 days</li>
+            <li>We will acknowledge your contribution in our security acknowledgments page (if desired)</li>
+          </ul>
+          
+          <h3>Security Acknowledgments</h3>
+          
+          <p>
+            We maintain a <a href="/security-hall-of-fame">Security Hall of Fame</a> to recognize security researchers who have responsibly disclosed vulnerabilities. With your permission, we will add your name to this list after verifying and addressing the reported vulnerability.
+          </p>
+          
+          <h3>Prohibited Actions</h3>
+          
+          <p>
+            When investigating potential vulnerabilities, please refrain from:
+          </p>
+          
+          <ul>
+            <li>Accessing or modifying data that does not belong to you</li>
+            <li>Performing denial-of-service tests</li>
+            <li>Using automated vulnerability scanning tools that may impact site availability</li>
+            <li>Testing third-party services or applications that integrate with our site</li>
+          </ul>
+          
+          <h3>Function-Epistemic Security Approach</h3>
+          
+          <p>
+            The Fair Witness Framework applies a structured approach to security based on epistemic functions:
+          </p>
+          
+          <ul>
+            <li><strong>Observer function:</strong> We document security-relevant events without interpretation</li>
+            <li><strong>Evaluator function:</strong> We apply explicit security criteria from OWASP and other frameworks</li>
+            <li><strong>Analyst function:</strong> We identify patterns and trends in security reports</li>
+            <li><strong>Synthesist function:</strong> We combine perspectives from multiple security domains</li>
+            <li><strong>Communicator function:</strong> We translate technical findings into clear remediation actions</li>
+          </ul>
+          
+          <h3>Contact Information</h3>
+          
+          <p>
+            For security-related inquiries, please contact our security team at <a href="mailto:security@fairwitness.bot">security@fairwitness.bot</a>.
+          </p>
+          
+          <p>
+            We value your security contributions and thank you for helping to improve the Fair Witness Framework.
+          </p>
+        </ProseContent>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
