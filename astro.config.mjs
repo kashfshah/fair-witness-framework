@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
+import fs from 'fs-extra';
 
 /**
  * @license
@@ -8,6 +9,21 @@ import tailwind from '@astrojs/tailwind';
  */
 
 // https://astro.build/config
+// Copy scripts directory to public during build
+const copyScriptsToPublic = () => ({
+  name: 'copy-scripts-hook',
+  hooks: {
+    'astro:build:done': async ({ dir }) => {
+      try {
+        await fs.copy('./src/scripts', './public/scripts');
+        console.log('✅ Scripts directory copied to public folder successfully');
+      } catch (error) {
+        console.error('❌ Error copying scripts directory:', error);
+      }
+    }
+  }
+});
+
 export default defineConfig({
   vite: {
     build: {
@@ -15,7 +31,7 @@ export default defineConfig({
     }
   },
   site: 'https://fairwitness.bot',
-  integrations: [tailwind()],
+  integrations: [tailwind(), copyScriptsToPublic()],
   output: 'static',
   build: {
     // Optimize assets during build

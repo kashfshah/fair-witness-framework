@@ -1,0 +1,57 @@
+/**
+ * @license
+ * Fair Witness Bot Framework
+ * Copyright (c) 2025 Fair Witness Bot
+ * This source code contains material licensed under the Creative Commons
+ * Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+ * https://creativecommons.org/licenses/by-sa/4.0/
+ */
+
+// Theme handling - executed immediately but small enough not to be a concern
+document.addEventListener('DOMContentLoaded', function() {
+  // Check for saved theme preference or respect OS setting
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    document.documentElement.classList.add('dark');
+  }
+  
+  // Theme toggle functionality with progressive enhancement
+  const themeToggles = document.querySelectorAll('.theme-toggle');
+  themeToggles.forEach(toggle => {
+    toggle.addEventListener('click', function() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      
+      // Update toggle aria-label
+      themeToggles.forEach(t => {
+        t.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      });
+    });
+  });
+});
+
+// Jump to top functionality with progressive enhancement
+document.addEventListener('DOMContentLoaded', function() {
+  const jumpToTopBtn = document.getElementById('jump-to-top');
+  if (jumpToTopBtn) {
+    // Only show button when scrolled down
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 300) {
+        jumpToTopBtn.classList.remove('hidden');
+      } else {
+        jumpToTopBtn.classList.add('hidden');
+      }
+    });
+    
+    // Smooth scroll to top when clicked
+    jumpToTopBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+});

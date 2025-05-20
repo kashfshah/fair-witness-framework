@@ -1,0 +1,49 @@
+/**
+ * @license
+ * Fair Witness Bot Framework
+ * Copyright (c) 2025 Fair Witness Bot
+ * This source code contains material licensed under the Creative Commons
+ * Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+ * https://creativecommons.org/licenses/by-sa/4.0/
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Find all copy buttons
+  const copyButtons = document.querySelectorAll('[data-clipboard]');
+  
+  copyButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Find the target code element using the data-clipboard attribute
+      const targetId = button.getAttribute('data-clipboard');
+      const codeBlock = document.getElementById(targetId);
+      
+      if (codeBlock) {
+        // Get text content from the code block
+        const textToCopy = codeBlock.textContent;
+        
+        // Copy to clipboard
+        navigator.clipboard.writeText(textToCopy)
+          .then(() => {
+            // Provide feedback to the user
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            button.classList.add('copied');
+            
+            // Reset button text after 2 seconds
+            setTimeout(() => {
+              button.textContent = originalText;
+              button.classList.remove('copied');
+            }, 2000);
+          })
+          .catch(err => {
+            console.error('Failed to copy:', err);
+            // Fallback feedback
+            button.textContent = 'Error!';
+            setTimeout(() => {
+              button.textContent = originalText;
+            }, 2000);
+          });
+      }
+    });
+  });
+});

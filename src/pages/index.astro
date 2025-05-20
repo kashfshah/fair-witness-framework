@@ -14,37 +14,7 @@ import ProseContent from '../components/shared/ProseContent.astro';
 ---
 
 <BaseLayout title="Home">
-  <script>
-    // Wait for the DOM to be fully loaded
-    document.addEventListener('DOMContentLoaded', () => {
-      const copyBtn = document.getElementById('copy-yaml-btn');
-      const yamlConfig = document.getElementById('yaml-config');
-      
-      if (copyBtn && yamlConfig) {
-        copyBtn.addEventListener('click', () => {
-          // Get the text content from the YAML configuration
-          const configText = yamlConfig.textContent;
-          
-          // Use the clipboard API to copy the text
-          navigator.clipboard.writeText(configText)
-            .then(() => {
-              // Visual feedback that copy was successful
-              const originalText = copyBtn.innerHTML;
-              copyBtn.innerHTML = '<span>Copied!</span>';
-              
-              // Restore original button text after 2 seconds
-              setTimeout(() => {
-                copyBtn.innerHTML = originalText;
-              }, 2000);
-            })
-            .catch(err => {
-              console.error('Failed to copy text: ', err);
-              alert('Failed to copy text to clipboard');
-            });
-        });
-      }
-    });
-  </script>
+  <script src="/scripts/yaml-clipboard.js" defer></script>
   <section class="py-20 bg-gradient-to-b from-secondary to-white dark:from-primary dark:to-primary/80">
     <div class="container">
       <div class="max-w-3xl mx-auto text-center">
